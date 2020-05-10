@@ -1,24 +1,26 @@
 <div class="section">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title class="mat-headline">Books</mat-card-title>
-    </mat-card-header>
+  <h2 class="page-title mat-headline">Books</h2>
 
-    <mat-card-content>
-      <p class="margin-common">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt.
-      </p>
-
-      <!-- <mat-spinner
-          color="primary"
-          *ngIf="loading"
-          class="spinner"
-        ></mat-spinner> -->
-    </mat-card-content>
-  </mat-card>
+  <div class="books-card-container">
+    <mat-card class="example-card mat-elevation-z4">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Negotiating Identity & Transnationalism</mat-card-title>
+        <mat-card-subtitle
+          >Middle Eastern and North African Communication and Critical Cultural
+          Studies</mat-card-subtitle
+        >
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="../../../assets/negotiating_identity_and_transnationalism.jpg"
+        alt="Cover photo of 'Negotiating Identity & Transnationalism'"
+      />
+      <mat-card-content> </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Publisher Link</button>
+        <button mat-raised-button color="primary">Purchase Book</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

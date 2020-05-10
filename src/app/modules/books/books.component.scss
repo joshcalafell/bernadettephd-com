@@ -1,0 +1,20 @@
+@import "../../../styles/mixin.scss";
+
+.books-card-container {
+  display: table;
+}
+.example-card {
+  margin: 16px;
+  max-width: 40%;
+  @include tablet {
+    width: 100%;
+  }
+  .mat-card-actions {
+    margin: 16px;
+  }
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
