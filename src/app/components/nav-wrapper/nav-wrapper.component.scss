@@ -8,6 +8,18 @@
   z-index: 3 !important;
 }
 
+.no-desktop {
+  @include desktop {
+    display: none;
+  }
+}
+
+.no-mobile {
+  @include tablet {
+    display: none;
+  }
+}
+
 .sidenav {
   width: 300px;
 }
