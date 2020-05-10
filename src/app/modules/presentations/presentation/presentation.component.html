@@ -1,18 +1,25 @@
-<div class="list-item">
-  <h4 matLine class="title">
-    {{ presentation.role }} ({{ presentation.date.seconds | timestamp }})
-  </h4>
-  <p matLine class="item opcaity-med" *ngIf="presentation.title">
-    <i>"{{ presentation.title }}"</i>
-  </p>
-  <p matLine class="item" *ngIf="presentation.department">
-    {{ presentation.department }}
-  </p>
-  <p matLine class="item" *ngIf="presentation.school">
-    {{ presentation.school }}
-  </p>
-  <p matLine class="item" *ngIf="presentation.location">
-    <span class="item">{{ presentation.location }}</span>
-  </p>
-</div>
-<mat-divider *ngIf="!lastItem"></mat-divider>
+<mat-card class="bmc-list-item mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>
+      <h4 matLine class="title">
+        {{ presentation.role }} ({{ presentation.date.seconds | timestamp }})
+      </h4>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <p matLine class="item opcaity-med" *ngIf="presentation.title">
+        <i>"{{ presentation.title }}"</i>
+      </p>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p matLine class="item" *ngIf="presentation.department">
+      {{ presentation.department }}
+    </p>
+    <p matLine class="item" *ngIf="presentation.school">
+      {{ presentation.school }}
+    </p>
+    <p matLine class="item" *ngIf="presentation.location">
+      <span class="item">{{ presentation.location }}</span>
+    </p>
+  </mat-card-content>
+</mat-card>

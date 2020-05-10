@@ -1,15 +1,11 @@
 <div class="section">
   <h2 class="page-title mat-headline">Media Commentary</h2>
 
-  <mat-divider></mat-divider>
-
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
-  <mat-list *ngIf="commentaries">
-    <bmc-commmentary
-      *ngFor="let commentary of commentaries; let i = index"
-      [item]="commentary"
-      [lastItem]="i == commentaries.length - 1"
-    ></bmc-commmentary>
-  </mat-list>
+  <bmc-commmentary
+    *ngFor="let commentary of commentaries; let i = index"
+    [item]="commentary"
+    [lastItem]="i == commentaries.length - 1"
+  ></bmc-commmentary>
 </div>

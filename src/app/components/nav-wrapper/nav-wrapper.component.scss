@@ -1,8 +1,8 @@
 @import "../../../styles/mixin.scss";
 
-.sidenav-container {
-  height: 100vh;
-}
+// .sidenav-container {
+//   height: 100vh;
+// }
 
 .mat-toolbar {
   z-index: 3 !important;
@@ -10,14 +10,6 @@
 
 .sidenav {
   width: 300px;
-  .mat-card {
-    margin: 6px;
-    height: auto;
-  }
-}
-
-.wrapper {
-  padding: 16px;
 }
 
 .sidenav .mat-toolbar {

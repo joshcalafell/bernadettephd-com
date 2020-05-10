@@ -1,37 +1,41 @@
-<div class="list-item">
-  <h4 matLine class="title">
-    {{ publication.title }}
-  </h4>
-  <p matLine class="item opacity" *ngIf="publication.subtitle">
-    <i>"{{ publication.subtitle }}"</i>
-  </p>
-</div>
-<div class="flex-row btn-row">
-  <button
-    mat-raised-button
-    color="primary"
-    *ngIf="publication.publicationURL"
-    target="_blank"
-  >
-    Publisher Link<mat-icon class="download-icon">exit_to_app</mat-icon>
-  </button>
-  <button
-    mat-raised-button
-    color="primary"
-    *ngIf="publication.reference && (afAuth.authState | async)"
-    (click)="savePDF(publication)"
-  >
-    Download PDF
-    <mat-icon class="download-icon">cloud_download</mat-icon>
-  </button>
-  <a
-    mat-raised-button
-    color="primary"
-    (click)="openDialog()"
-    *ngIf="publication.reference && !(afAuth.authState | async)"
-  >
-    Login/Signup to View
-  </a>
-</div>
-
-<mat-divider *ngIf="!lastItem"></mat-divider>
+<mat-card class="bmc-list-item mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>
+      <h4 matLine class="title">
+        {{ publication.title }}
+      </h4>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <p matLine class="item opacity" *ngIf="publication.subtitle">
+        <i>"{{ publication.subtitle }}"</i>
+      </p>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="publication.publicationURL"
+      target="_blank"
+    >
+      Publisher Link<mat-icon class="download-icon">exit_to_app</mat-icon>
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="publication.reference && (afAuth.authState | async)"
+      (click)="savePDF(publication)"
+    >
+      Download PDF
+      <mat-icon class="download-icon">cloud_download</mat-icon>
+    </button>
+    <a
+      mat-raised-button
+      color="primary"
+      (click)="openDialog()"
+      *ngIf="publication.reference && !(afAuth.authState | async)"
+    >
+      Login/Signup to View
+    </a>
+  </mat-card-actions>
+</mat-card>

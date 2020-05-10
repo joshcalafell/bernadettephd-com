@@ -1,54 +1,42 @@
 <div class="section">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title class="mat-headline">Publications</mat-card-title>
-    </mat-card-header>
+  <h2 class="page-title mat-headline">Publications</h2>
 
-    <mat-card-content>
-      <p class="margin-common" *ngIf="!(afAuth.authState | async)">
-        The 50+ publications available here are hosted at no cost to you,
-        however to reduce liablity and costs for us, we ask that you have an
-        <a
-          href="#"
-          class="link"
-          id="verified-account"
-          (click)="$event.preventDefault(); openDialog()"
-        >
-          Email Verified Account, and are Logged In</a
-        >
-        to be able to access and download publications.
-      </p>
+  <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
-      <!-- <mat-spinner
-        color="primary"
-        *ngIf="loading"
-        class="spinner"
-      ></mat-spinner> -->
+  <p class="margin-common">
+    In addition to regularly presenting my work at the National Communication
+    Association Convention and Western States Communication Association
+    conference, here are some other recent research presentations:
+  </p>
 
-      <mat-tab-group *ngIf="afAuth.authState | async">
-        <mat-tab *ngFor="let tab of tabs" label="{{ tab }}">
-          <mat-list *ngIf="!loading && publications.length">
-            <bmc-publication
-              *ngFor="let publication of publications; let i = index"
-              [publication]="publication"
-              [lastItem]="i == publications.length - 1"
-            >
-            </bmc-publication>
-          </mat-list>
-        </mat-tab>
+  <p class="margin-common" *ngIf="!(afAuth.authState | async)">
+    The 50+ publications available here are hosted at no cost to you, however to
+    reduce liablity and costs for us, we ask that you have an
+    <a
+      href="#"
+      class="link"
+      id="verified-account"
+      (click)="$event.preventDefault(); openDialog()"
+    >
+      Email Verified Account, and are Logged In</a
+    >
+    to be able to access and download publications.
+  </p>
 
-        <!-- <mat-tab label="Editorial Work">
-          Hi, I work!
-        </mat-tab>
+  <mat-spinner
+    color="primary"
+    *ngIf="loading && afAuth.authState | async"
+    class="spinner"
+  ></mat-spinner>
 
-        <mat-tab label="Journal Articles">
-          Hi, I work!
-        </mat-tab>
-
-        <mat-tab label="Chapters">
-          Hi, I work!
-        </mat-tab> -->
-      </mat-tab-group>
-    </mat-card-content>
-  </mat-card>
+  <mat-tab-group *ngIf="afAuth.authState | async">
+    <mat-tab *ngFor="let tab of tabs" label="{{ tab }}">
+      <bmc-publication
+        *ngFor="let publication of publications; let i = index"
+        [publication]="publication"
+        [lastItem]="i == publications.length - 1"
+      >
+      </bmc-publication>
+    </mat-tab>
+  </mat-tab-group>
 </div>

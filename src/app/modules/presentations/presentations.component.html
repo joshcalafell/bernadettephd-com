@@ -1,44 +1,33 @@
 <div class="section">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title class="mat-headline">Recent Presentations</mat-card-title>
-    </mat-card-header>
+  <h2 class="page-title mat-headline">Recent Presentations</h2>
 
-    <mat-card-content>
-      <p class="margin-common">
-        In addition to regularly presenting my work at the National
-        Communication Association Convention and Western States Communication
-        Association conference, here are some other recent research
-        presentations:
-      </p>
+  <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
-      <mat-spinner
-        color="primary"
-        *ngIf="loading"
-        class="spinner"
-      ></mat-spinner>
+  <p class="margin-common">
+    In addition to regularly presenting my work at the National Communication
+    Association Convention and Western States Communication Association
+    conference, here are some other recent research presentations:
+  </p>
 
-      <mat-tab-group>
-        <mat-tab label="List">
-          <mat-list *ngIf="!loading && presentations.length">
-            <bmc-presentation
-              *ngFor="let presentation of presentations; let i = index"
-              [presentation]="presentation"
-              [lastItem]="
-                presentations && i == presentations.length - 1 ? true : false
-              "
-            >
-            </bmc-presentation>
-          </mat-list>
-        </mat-tab>
+  <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
-        <mat-tab label="Map">
-          <bmc-presentation-map
-            *ngIf="!loading"
-            [presentations]="presentations"
-          ></bmc-presentation-map>
-        </mat-tab>
-      </mat-tab-group>
-    </mat-card-content>
-  </mat-card>
+  <mat-tab-group>
+    <mat-tab label="List">
+      <bmc-presentation
+        *ngFor="let presentation of presentations; let i = index"
+        [presentation]="presentation"
+        [lastItem]="
+          presentations && i == presentations.length - 1 ? true : false
+        "
+      >
+      </bmc-presentation>
+    </mat-tab>
+
+    <mat-tab label="Map">
+      <bmc-presentation-map
+        *ngIf="!loading"
+        [presentations]="presentations"
+      ></bmc-presentation-map>
+    </mat-tab>
+  </mat-tab-group>
 </div>

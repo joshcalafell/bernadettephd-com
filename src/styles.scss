@@ -2,7 +2,7 @@
 @import "./styles/mixin.scss";
 
 @import url("https://fonts.googleapis.com/css?family=Sansita");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Oswald");
 html,
 body {
   margin: 0;
@@ -99,20 +99,18 @@ p.item {
 .section {
   width: 100%;
   min-height: calc(100vh - 64px);
+  h2 {
+    font-family: "sofia-pro";
+    font-weight: 500;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 
 .list-item {
   margin: 16px 16px;
   padding-top: $padding-common !important;
   padding-bottom: $padding-common !important;
-}
-
-.mat-card.bmc-page-card {
-  background: $color-primary !important;
-  .page-title {
-    color: white;
-    font-weight: bold;
-  }
 }
 
 .mat-card.bmc-list-item {
@@ -128,11 +126,8 @@ p.item {
 }
 
 .section {
-  h2.page-title {
+  h2 {
     margin-top: 16px;
     margin-left: 16px;
-  }
-  .mat-divider {
-    margin: 0 16px;
   }
 }
