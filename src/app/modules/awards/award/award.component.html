@@ -1,13 +1,20 @@
-<div class="list-item">
-  <h4 matLine class="title">
-    {{ award.name }} ({{ award.date.seconds | timestamp }})
-  </h4>
-  <p matLine class="item" *ngIf="award.amount">
-    {{ award.amount | currency: "USD" }}
-  </p>
-  <p matLine class="item opacity" *ngIf="award.department">
-    {{ award.department }}
-  </p>
-  <p matLine class="item" *ngIf="award.issuer">{{ award.issuer }}</p>
-</div>
-<mat-divider *ngIf="!lastItem"></mat-divider>
+<mat-card class="bmc-list-item mat-elevation-z8">
+  <mat-card-header>
+    <mat-card-title>
+      <h4 matLine class="title">
+        {{ award.name }} ({{ award.date.seconds | timestamp }})
+      </h4>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <p matLine class="item" *ngIf="award.amount">
+        {{ award.amount | currency: "USD" }}
+      </p>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p matLine class="item opacity" *ngIf="award.department">
+      {{ award.department }}
+    </p>
+    <p matLine class="item" *ngIf="award.issuer">{{ award.issuer }}</p>
+  </mat-card-content>
+</mat-card>

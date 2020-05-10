@@ -24,10 +24,10 @@
   background: inherit;
 }
 
-.mat-list-item {
-  font-family: "sofia-pro";
-  font-size: 16px;
-}
+// .mat-list-item {
+//   font-family: "sofia-pro";
+//   font-size: 16px;
+// }
 
 .mat-toolbar.mat-primary {
   position: sticky;
@@ -44,10 +44,7 @@
 }
 
 .bmc-toolbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  @include flex-row(flex-start, center);
 }
 
 button.title {

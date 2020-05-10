@@ -2,14 +2,14 @@
   <div *ngIf="isSignup">
     <h3>Create Account</h3>
 
-    <button mat-stroked-button (click)="changeType('login')">
+    <button mat-raised-button (click)="changeType('login')">
       Returning user?
     </button>
   </div>
 
   <div *ngIf="isLogin">
     <h3>Sign In</h3>
-    <button size="small" mat-stroked-button (click)="changeType('signup')">
+    <button size="small" mat-raised-button (click)="changeType('signup')">
       New user?
     </button>
   </div>
@@ -69,7 +69,7 @@
 
     <button
       *ngIf="isPasswordReset"
-      mat-stroked-button
+      mat-raised-button
       type="submit"
       [disabled]="loading"
     >
