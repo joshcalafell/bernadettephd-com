@@ -1,16 +1,30 @@
 @import "../../../styles/mixin.scss";
 
 .books-card-container {
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  @include tablet {
+    @include flex-col(flex-start, flex-start);
+  }
 }
 .example-card {
   margin: 16px;
-  max-width: 40%;
+  max-width: calc(50% - 64px);
   @include tablet {
-    width: 100%;
+    max-width: calc(100% - 64px);
   }
   .mat-card-actions {
     margin: 16px;
+  }
+}
+
+.example-card:nth-child(even) {
+  margin-left: 0px;
+  margin-right: 0px;
+  @include tablet {
+    margin-left: 16px;
   }
 }
 
