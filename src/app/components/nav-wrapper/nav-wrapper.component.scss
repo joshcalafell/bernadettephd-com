@@ -1,0 +1,61 @@
+@import "../../../styles/mixin.scss";
+
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 300px;
+  .mat-card {
+    margin: 6px;
+    height: auto;
+  }
+}
+
+.wrapper {
+  padding: 16px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-list-item {
+  font-family: "sofia-pro";
+  font-size: 16px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header-image {
+  height: 100px;
+  width: 100px;
+  background-image: url(/assets/bernadette.jpg);
+  background-size: cover;
+  border: solid white 2px;
+}
+
+.bmc-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+button.title {
+  margin-top: 4px;
+}
+
+/* Set a specific color for each brand */
+
+// .avatar {
+//   outline: none !important;
+//   margin-top: 5px;
+//   width: 2rem;
+//   border-radius: 50%;
+//   border: solid 1px #333;
+// }

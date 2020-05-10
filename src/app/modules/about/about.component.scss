@@ -1,0 +1,18 @@
+@import "../../../styles/mixin.scss";
+
+.about-card {
+  .header-image {
+    background-image: url("../../../assets/gonzaga.jpg");
+    background-size: cover;
+  }
+  #gonzaga-btn-icon mat-icon {
+    position: relative;
+    bottom: 1px;
+  }
+  max-width: calc(300px + 32px);
+  float: left;
+  margin-right: $margin-common;
+  @include tablet {
+    margin-bottom: $margin-common;
+  }
+}

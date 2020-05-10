@@ -1,0 +1,20 @@
+<google-map
+  width="100%"
+  [zoom]="(isHandset$ | async) ? 3 : 4"
+  [center]="center"
+  [options]="options"
+  (mapClick)="click($event)"
+>
+  <map-marker
+    #markerElem
+    *ngFor="let marker of markers"
+    [position]="marker.position"
+    [label]="marker.label"
+    [options]="marker.options"
+    (mapClick)="openInfo(markerElem, marker.info)"
+  >
+  </map-marker>
+
+  <map-info-window class="info-window" [innerHTML]="infoContent | safeHtml">
+  </map-info-window>
+</google-map>

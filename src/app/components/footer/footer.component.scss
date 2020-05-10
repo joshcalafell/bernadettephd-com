@@ -1,0 +1,32 @@
+@import "../../../styles/mixin.scss";
+
+.footer {
+  margin: 0;
+  padding: $margin-common;
+  background: $color-primary;
+
+  .copy {
+    margin-top: 12px;
+  }
+
+  .fa {
+    color: white !important;
+  }
+
+  .fa {
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .mat-card {
+    .social-icons {
+      margin-left: $margin-common / 2;
+    }
+  }
+}

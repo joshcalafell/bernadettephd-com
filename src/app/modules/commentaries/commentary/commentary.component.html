@@ -1,0 +1,25 @@
+<div class="list-item">
+  <h4 matLine class="title">
+    {{ item.title }}
+  </h4>
+  <p matLine class="item" *ngIf="item.author_last && item.author_first">
+    {{ item.author_last }}, {{ item.author_first }} - {{ item.publication }} ({{
+      item.date.seconds | timestamp
+    }})
+  </p>
+  <p matLine class="item" *ngIf="item.accessed">
+    ({{ item.accessed.seconds | timestamp }})
+  </p>
+  <a
+    mat-stroked-button
+    color="primary"
+    href="{{ item.link }}"
+    target="_blank"
+    matLine
+    class="item link"
+    *ngIf="item.link"
+    >See Article <mat-icon class="exit-icon">exit_to_app</mat-icon></a
+  >
+  <p matLine class="item" *ngIf="!item.link">No article link available...</p>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

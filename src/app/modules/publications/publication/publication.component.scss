@@ -1,0 +1,19 @@
+@import "../../../../styles/mixin.scss";
+
+.btn-row {
+  margin-left: $margin-common !important;
+}
+
+.mat-stroked-button {
+  width: auto;
+  margin-right: $margin-common;
+}
+
+.download-icon {
+  position: relative;
+  top: -3px;
+}
+
+.publication-actions {
+  margin-left: 16px;
+}

@@ -1,0 +1,128 @@
+<mat-sidenav-container
+  class="sidenav-container"
+  [ngClass]="{ 'dark-theme': isDarkTheme | async }"
+>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-card class="mat-elevation-z0">
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-subtitle
+          >Performance and Critical Cultural Studies Scholar</mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/about">About</a>
+          <a mat-list-item routerLink="/research">Research</a>
+          <a mat-list-item routerLink="/books">Books</a>
+          <a mat-list-item routerLink="/publications">Publications</a>
+          <a mat-list-item routerLink="/presentations">Presentations</a>
+
+          <a mat-list-item routerLink="/awards-and-honors">Awards and Honors</a>
+          <a mat-list-item routerLink="/teaching-and-mentoring"
+            >Teaching and Mentoring</a
+          >
+          <a mat-list-item routerLink="/media-commentary">Media Commentary</a>
+        </mat-nav-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="bmc-toolbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button mat-button type="button">
+        <h1 class="mat-headline">Bernadette Calafell Ph.D.</h1>
+      </button>
+      <span class="spacer"></span>
+
+      <div class="account-icons">
+        <a
+          mat-icon-button
+          [matMenuTriggerFor]="userMenu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>account_circle</mat-icon>
+        </a>
+        <mat-menu #userMenu="matMenu">
+          <button
+            mat-menu-item
+            (click)="openDialog()"
+            *ngIf="!(afAuth.authState | async)"
+          >
+            <mat-icon>lock_open</mat-icon>
+            <span>Login</span>
+          </button>
+          <button
+            mat-menu-item
+            (click)="openDialog()"
+            *ngIf="afAuth.authState | async as user"
+          >
+            <mat-icon>lock</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+
+      <div class="menu-icons">
+        <a
+          mat-icon-button
+          [matMenuTriggerFor]="appMenu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </a>
+        <mat-menu #appMenu="matMenu">
+          <button
+            mat-menu-item
+            routerLink="/login"
+            *ngIf="!(afAuth.authState | async)"
+          >
+            <mat-icon>lock_open</mat-icon>
+            <span>Login</span>
+          </button>
+          <button
+            mat-menu-item
+            (click)="openDialog()"
+            *ngIf="afAuth.authState | async as user"
+          >
+            <mat-icon>lock</mat-icon>
+            <span>Logout</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>invert_colors</mat-icon>
+            <mat-slide-toggle
+              [checked]="isDarkTheme | async"
+              (change)="toggleDarkTheme($event.checked)"
+              >&nbsp;Dark Theme</mat-slide-toggle
+            >
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+      <!-- footer -->
+    </div>
+    <bmc-footer></bmc-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

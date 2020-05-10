@@ -1,0 +1,18 @@
+<div class="list-item">
+  <h4 matLine class="title">
+    {{ presentation.role }} ({{ presentation.date.seconds | timestamp }})
+  </h4>
+  <p matLine class="item opcaity-med" *ngIf="presentation.title">
+    <i>"{{ presentation.title }}"</i>
+  </p>
+  <p matLine class="item" *ngIf="presentation.department">
+    {{ presentation.department }}
+  </p>
+  <p matLine class="item" *ngIf="presentation.school">
+    {{ presentation.school }}
+  </p>
+  <p matLine class="item" *ngIf="presentation.location">
+    <span class="item">{{ presentation.location }}</span>
+  </p>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

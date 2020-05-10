@@ -1,0 +1,14 @@
+<div class="list-item">
+  <h4 matLine class="title">
+    {{ mentorship.student }}
+    <span *ngIf="mentorship.year"> ({{ mentorship.year }})</span>
+    <span *ngIf="!mentorship.year"> (Current)</span>
+  </h4>
+  <p matLine class="item" *ngIf="mentorship.position">
+    {{ mentorship.position }}
+  </p>
+  <p matLine class="item opacity" *ngIf="mentorship.school">
+    {{ mentorship.school }}
+  </p>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

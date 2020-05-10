@@ -1,0 +1,37 @@
+<div class="list-item">
+  <h4 matLine class="title">
+    {{ publication.title }}
+  </h4>
+  <p matLine class="item opacity" *ngIf="publication.subtitle">
+    <i>"{{ publication.subtitle }}"</i>
+  </p>
+</div>
+<div class="flex-row btn-row">
+  <button
+    mat-stroked-button
+    color="primary"
+    *ngIf="publication.publicationURL"
+    target="_blank"
+  >
+    Publisher Link<mat-icon class="download-icon">exit_to_app</mat-icon>
+  </button>
+  <button
+    mat-stroked-button
+    color="primary"
+    *ngIf="publication.reference && (afAuth.authState | async)"
+    (click)="savePDF(publication)"
+  >
+    Download PDF
+    <mat-icon class="download-icon">cloud_download</mat-icon>
+  </button>
+  <a
+    mat-stroked-button
+    color="primary"
+    (click)="openDialog()"
+    *ngIf="publication.reference && !(afAuth.authState | async)"
+  >
+    Login/Signup to View
+  </a>
+</div>
+
+<mat-divider *ngIf="!lastItem"></mat-divider>

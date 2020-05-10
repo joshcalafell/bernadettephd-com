@@ -1,0 +1,13 @@
+<div class="list-item">
+  <h4 matLine class="title">
+    {{ award.name }} ({{ award.date.seconds | timestamp }})
+  </h4>
+  <p matLine class="item" *ngIf="award.amount">
+    {{ award.amount | currency: "USD" }}
+  </p>
+  <p matLine class="item opacity" *ngIf="award.department">
+    {{ award.department }}
+  </p>
+  <p matLine class="item" *ngIf="award.issuer">{{ award.issuer }}</p>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

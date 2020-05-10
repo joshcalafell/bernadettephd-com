@@ -1,0 +1,36 @@
+@import "../../../styles/mixin.scss";
+
+.title {
+  margin-left: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.mat-list-item:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.mat-list-item:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.awards-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  @include tablet {
+    flex-direction: column;
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+}
+
+.award-icon {
+  position: relative;
+  top: 5px;
+  right: 2px;
+  color: black;
+  opacity: 0.666;
+}

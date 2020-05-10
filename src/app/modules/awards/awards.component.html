@@ -1,0 +1,32 @@
+<div class="section">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="mat-headline">Awards and Honors</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-spinner
+        color="primary"
+        *ngIf="loading"
+        class="spinner"
+      ></mat-spinner>
+
+      <mat-tab-group *ngIf="!loading">
+        <mat-tab
+          label="{{ tab | titlecase }} ({{ getCountByTab(tab) }})"
+          *ngFor="let tab of tabs"
+        >
+          <mat-list>
+            <bmc-award
+              *ngFor="let award of getAwardsByTab(tab); let i = index"
+              [award]="award"
+              [lastItem]="
+                tab && i == getAwardsByTab(tab).length - 1 ? true : false
+              "
+            ></bmc-award>
+          </mat-list>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

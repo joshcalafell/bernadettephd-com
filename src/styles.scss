@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/mixin.scss";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1 0 0;
+}
+
+a.link {
+  color: $color-primary;
+  text-decoration: none;
+  &:visited {
+    color: $color-primary;
+  }
+}
+
+section {
+  background: #303030;
+}
+
+footer {
+  background: #303030;
+  color: white;
+}
+
+body {
+  font-family: "Assistant", "Helvetica Neue", sans-serif;
+}
+
+.mat-card-title {
+  color: $color-primary;
+}
+
+.paragraph-margin {
+  margin: $margin-common;
+}
+
+.flex-row-fs {
+  @include flex-row-fs;
+}
+
+.flex-row-fe {
+  @include flex-row-fs;
+  justify-content: flex-end;
+}
+
+.flex-col-fs {
+  @include flex-col-fs;
+}
+
+.flex-col-fe {
+  @include flex-col-fs;
+  justify-content: flex-end;
+}
+
+.spacer {
+  flex: 1 0 0;
+}
+
+p {
+  line-height: 1.666rem;
+}
+
+.margin-common {
+  margin: $margin-common !important; // Material override
+}
+
+.list-item > p.opcaity {
+  opacity: 0.666 !important;
+}
+
+.spinner {
+  margin: 0 auto;
+}
+
+h4.title {
+  font-size: 18px !important;
+  font-weight: bold;
+  color: $color-primary;
+}
+
+p.item {
+  @include tablet {
+    font-size: 0.86rem !important;
+  }
+}
+
+.line {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.speaking-card {
+  background: #ffffff0a; // TODO: Matches Hover on Mat List Items, but a hack...
+}
+
+.section {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+}
+
+.list-item {
+  margin: 0 16px;
+  padding-top: $padding-common !important;
+  padding-bottom: $padding-common !important;
+}
