@@ -4,6 +4,8 @@
 // Plus imports for other components in your app.
 @import url("https://use.typekit.net/jnq3uxd.css");
 
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Oswald");
+
 $md-bmcblue: (
   50: #e0f6fa,
   100: #b3eaf2,
@@ -75,11 +77,11 @@ $md-bmc-violet: (
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 $custom-typography: mat-typography-config(
-  $font-family: "sofia-pro"
+  $font-family: "Noto Sans"
 );
 
 $custom-typography: mat-typography-config(
-  $font-family: "sofia-pro",
+  $font-family: "Noto Sans",
   $headline: mat-typography-level(28px, 36px, 700),
   $body-1: mat-typography-level(16px, 22px, 500),
   $title: mat-typography-level(20px, 24px, 500)

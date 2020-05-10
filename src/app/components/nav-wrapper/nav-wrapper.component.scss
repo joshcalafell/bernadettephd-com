@@ -14,6 +14,18 @@
   }
 }
 
+.social-icons-wrapper {
+  padding: $margin-common;
+  margin: $margin-common;
+  text-align: center;
+  border-radius: 5px;
+  background: #00a8c9;
+  color: white;
+}
+.social-icons {
+  @include flex-row(center, center);
+}
+
 .no-mobile {
   @include tablet {
     display: none;
