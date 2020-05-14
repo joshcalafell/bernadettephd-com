@@ -2,12 +2,12 @@
   <mat-card-header>
     <mat-card-title>
       <h4 matLine class="title">
-        {{ award.name }} ({{ award.date.seconds | timestamp }})
+        {{ award.name }}
       </h4>
     </mat-card-title>
     <mat-card-subtitle>
-      <p matLine class="item" *ngIf="award.amount">
-        {{ award.amount | currency: "USD" }}
+      <p matLine class="item" *ngIf="award.date">
+        {{ award.date.seconds | timestamp }}
       </p>
     </mat-card-subtitle>
   </mat-card-header>
