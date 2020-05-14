@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/mixin.scss";
 
-@import url("https://fonts.googleapis.com/css?family=Sansita");
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@600&family=Lato&display=swap");
 html,
 body {
   margin: 0;
+}
+
+h1 {
+  font-family: "Assistant", sans-serif !important;
 }
 
 .spacer {
@@ -30,15 +33,7 @@ footer {
 }
 
 body {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
-}
-
-// .mat-card-title {
-//   color: $color-primary;
-// }
-
-.paragraph-margin {
-  margin: $margin-common;
+  font-family: "Roboto", sans-serif;
 }
 
 .flex-row-fs {
@@ -51,10 +46,6 @@ body {
 
 .flex-col {
   @include flex-col(flex-start, center);
-}
-
-.spacer {
-  flex: 1 0 0;
 }
 
 p {
@@ -74,7 +65,7 @@ p {
 }
 
 h4.title {
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-weight: bold;
   color: $color-primary;
 }
@@ -99,6 +90,7 @@ p.item {
 .section {
   min-height: calc(100vh - 64px);
   h2 {
+    font-family: "Assistant", sans-serif;
     font-weight: 500;
     padding-top: 16px;
     padding-bottom: 16px;
@@ -119,7 +111,7 @@ p.item {
   }
 
   .mat-card-actions {
-    margin: 16px !important;
+    margin: 0 $margin-common $margin-common $margin-common !important;
   }
 }
 

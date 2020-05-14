@@ -83,12 +83,12 @@
       <div class="menu-icons">
         <a
           mat-icon-button
-          [matMenuTriggerFor]="appMenu"
+          [matMenuTriggerFor]="loginMenu"
           aria-label="Example icon-button with a menu"
         >
-          <mat-icon>more_vert</mat-icon>
+          <mat-icon>account_circle</mat-icon>
         </a>
-        <mat-menu #appMenu="matMenu">
+        <mat-menu #loginMenu="matMenu">
           <button
             mat-menu-item
             (click)="openDialog()"
@@ -105,6 +105,15 @@
             <mat-icon>lock</mat-icon>
             <span>Logout</span>
           </button>
+        </mat-menu>
+        <a
+          mat-icon-button
+          [matMenuTriggerFor]="appMenu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>settings</mat-icon>
+        </a>
+        <mat-menu #appMenu="matMenu">
           <button mat-menu-item>
             <mat-icon>invert_colors</mat-icon>
             <mat-slide-toggle
@@ -112,6 +121,10 @@
               (change)="toggleDarkTheme($event.checked)"
               >&nbsp;Dark Theme</mat-slide-toggle
             >
+          </button>
+          <button mat-menu-item>
+            <mat-icon>web</mat-icon>
+            Developer Info
           </button>
         </mat-menu>
       </div>
