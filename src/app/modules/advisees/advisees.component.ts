@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo/seo.service';
-import { Mentorship } from './mentorship/mentorship.model';
+import { Advisee } from './advisee/advisee.model';
 import { Subscription } from 'rxjs';
 import { FirestoreService } from '../../services/firestore/firestore.service';
 
 @Component({
-  selector: 'bmc-mentoring',
-  templateUrl: './mentoring.component.html',
-  styleUrls: ['./mentoring.component.scss']
+  selector: 'bmc-advisees',
+  templateUrl: './advisees.component.html',
+  styleUrls: ['./advisees.component.scss']
 })
-export class MentoringComponent implements OnInit {
+export class AdviseesComponent implements OnInit {
   tabs: string[] = [];
 
-  mentorships: Mentorship[];
+  advisees: Advisee[];
   sub: Subscription;
 
   loading: boolean = true;
@@ -29,9 +29,9 @@ export class MentoringComponent implements OnInit {
       .getMentorships()
       .valueChanges()
       .subscribe(res => {
-        this.mentorships = res;
+        this.advisees = res;
         this.loading = false;
-        this.mentorships.forEach((item: Mentorship) => {
+        this.advisees.forEach((item: Advisee) => {
           if (this.tabs.indexOf(item.type) === -1) {
             this.tabs.push(item.type);
           }
@@ -47,14 +47,14 @@ export class MentoringComponent implements OnInit {
     });
   }
 
-  getMentorshipsByTab(tab: string) {
-    return this.mentorships.filter(
+  getAdviseesByTab(tab: string) {
+    return this.advisees.filter(
       mentorship => mentorship.type.toLowerCase() === tab.toLowerCase()
     );
   }
 
   getCountByTab(tab: string): number {
-    return this.mentorships.filter(
+    return this.advisees.filter(
       mentorship => mentorship.type.toLowerCase() === tab.toLowerCase()
     ).length;
   }

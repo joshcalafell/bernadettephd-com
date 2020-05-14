@@ -30,11 +30,9 @@ const routes: Routes = [
       )
   },
   {
-    path: 'mentoring',
+    path: 'advisees',
     loadChildren: () =>
-      import('./modules/mentoring/mentoring.module').then(
-        m => m.MentoringModule
-      )
+      import('./modules/advisees/advisees.module').then(m => m.AdviseesModule)
   },
   {
     path: 'commentary',

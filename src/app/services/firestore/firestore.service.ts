@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Award } from 'src/app/modules/awards/award/award.model';
 import { Commentary } from 'src/app/modules/commentaries/commentary/commentary.model';
-import { Mentorship } from 'src/app/modules/mentoring/mentorship/mentorship.model';
+import { Advisee } from 'src/app/modules/advisees/advisee/advisee.model';
 import { Presentation } from 'src/app/modules/presentations/presentation/presentation.model';
 import { Publication } from 'src/app/modules/publications/publication/publication.model';
 
@@ -26,7 +26,7 @@ export class FirestoreService {
   }
 
   getMentorships() {
-    return this.db.collection<Mentorship>('mentoring', ref =>
+    return this.db.collection<Advisee>('mentoring', ref =>
       ref.orderBy('year', 'desc').orderBy('student', 'desc')
     );
   }

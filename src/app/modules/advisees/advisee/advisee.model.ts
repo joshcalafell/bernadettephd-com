@@ -1,4 +1,4 @@
-export interface Mentorship {
+export interface Advisee {
   type: string;
   student: string;
   year?: number;
