@@ -2,7 +2,7 @@
 @import "./styles/mixin.scss";
 
 @import url("https://fonts.googleapis.com/css?family=Sansita");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed");
 html,
 body {
   margin: 0;
@@ -30,7 +30,7 @@ footer {
 }
 
 body {
-  font-family: "Noto Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
 }
 
 // .mat-card-title {
@@ -99,7 +99,7 @@ p.item {
 .section {
   min-height: calc(100vh - 64px);
   h2 {
-    font-family: "Noto Sans";
+    font-family: "Roboto Condensed";
     font-weight: 500;
     padding-top: 16px;
     padding-bottom: 16px;
