@@ -15,5 +15,12 @@
     Logged in as <strong>{{ user.email }}</strong>
   </p>
 
-  <button mat-raised-button (click)="afAuth.auth.signOut()">Logout</button>
+  <div class="btn-row">
+    <button mat-raised-button color="primary" (click)="afAuth.auth.signOut()">
+      Logout
+    </button>
+    <button mat-raised-button color="primary" (click)="onNoClick()">
+      Close
+    </button>
+  </div>
 </div>

@@ -1,3 +1,5 @@
+@import "../../../../styles/mixin.scss";
+
 button {
   img {
     width: 1.25em;
@@ -10,4 +12,10 @@ button {
 
 .logout {
   padding-top: 5em;
+}
+
+.btn-row {
+  .mat-raised-button {
+    margin: $margin-common;
+  }
 }

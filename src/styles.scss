@@ -2,7 +2,7 @@
 @import "./styles/mixin.scss";
 
 @import url("https://fonts.googleapis.com/css?family=Sansita");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Oswald");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
 html,
 body {
   margin: 0;
@@ -97,7 +97,6 @@ p.item {
 }
 
 .section {
-  width: 100%;
   min-height: calc(100vh - 64px);
   h2 {
     font-family: "Noto Sans";
