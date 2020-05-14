@@ -1,0 +1,11 @@
+[
+  {
+    "origin": [
+      "https://firebasestorage.googleapis.com/",
+      "https://bernadettephd.com"
+    ],
+    "responseHeader": ["Content-Type"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]

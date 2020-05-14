@@ -18,7 +18,7 @@ const routes: Routes = [
       import('./modules/research/research.module').then(m => m.ResearchModule)
   },
   {
-    path: 'awards-and-honors',
+    path: 'awards',
     loadChildren: () =>
       import('./modules/awards/awards.module').then(m => m.AwardsModule)
   },
@@ -30,14 +30,14 @@ const routes: Routes = [
       )
   },
   {
-    path: 'teaching-and-mentoring',
+    path: 'mentoring',
     loadChildren: () =>
       import('./modules/mentoring/mentoring.module').then(
         m => m.MentoringModule
       )
   },
   {
-    path: 'media-commentary',
+    path: 'commentary',
     loadChildren: () =>
       import('./modules/commentaries/commentaries.module').then(
         m => m.CommentariesModule
@@ -50,11 +50,6 @@ const routes: Routes = [
         m => m.PresentationsModule
       )
   },
-  // {
-  //   path: 'login',
-  //   loadChildren: () =>
-  //     import('./core/login/login.module').then(m => m.LoginModule),
-  // },
   {
     path: '404',
     loadChildren: () =>
@@ -64,6 +59,13 @@ const routes: Routes = [
     path: 'books',
     loadChildren: () =>
       import('./modules/books/books.module').then(m => m.BooksModule)
+  },
+  {
+    path: 'philosophy',
+    loadChildren: () =>
+      import('./modules/philosophy/philosophy.module').then(
+        m => m.PhilosophyModule
+      )
   },
   {
     path: '**',
