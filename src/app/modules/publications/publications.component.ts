@@ -18,7 +18,7 @@ export class PublicationsComponent implements OnInit {
   publications: Publication[];
   sub: Subscription;
 
-  loading: boolean = false;
+  loading: boolean = true;
 
   constructor(
     private fs: FirestoreService,
@@ -33,30 +33,6 @@ export class PublicationsComponent implements OnInit {
       description: 'A list of publications by Dr. Bernadette M. Calafell'
     });
 
-    this.afAuth.authState.subscribe(auth => {
-      if (auth) {
-        if (auth.emailVerified) {
-          this.performAuthorizedActions();
-        }
-      } else {
-        this.performUnauthorizedActions();
-      }
-    });
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogLoginComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
-  }
-
-  performAuthorizedActions() {
-    if (!this.loading) {
-      this.loading = true;
-    }
     this.sub = this.fs
       .getPublications()
       .valueChanges()
@@ -71,21 +47,23 @@ export class PublicationsComponent implements OnInit {
       });
   }
 
-  performUnauthorizedActions() {
-    this.publications = [];
-    this.tabs = [];
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogLoginComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
 
-  getPublicationsByTab(tab: string) {
+  getPublicationsByTab(tab: string): Publication[] {
     return this.publications.filter(
       publication => publication.type.toLowerCase() === tab.toLowerCase()
     );
   }
 
   getCountByTab(tab: string): number {
+    console.log(tab, this.publications);
     return this.publications.filter(
       publication => publication.type.toLowerCase() === tab.toLowerCase()
     ).length;

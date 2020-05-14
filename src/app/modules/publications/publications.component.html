@@ -11,23 +11,23 @@
     >
       Email Verified Account, and are Logged In</a
     >
-    to be able to access and download publications.
+    to be able to download publications.
   </p>
 
-  <mat-spinner
-    color="primary"
-    *ngIf="loading && afAuth.authState | async"
-    class="spinner"
-  ></mat-spinner>
+  <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
-  <mat-tab-group *ngIf="afAuth.authState | async">
-    <mat-tab *ngFor="let tab of tabs" label="{{ tab }}">
+  <mat-tab-group *ngIf="!loading">
+    <mat-tab
+      label="{{ tab }} ({{ getCountByTab(tab) }})"
+      *ngFor="let tab of tabs"
+    >
       <bmc-publication
-        *ngFor="let publication of publications; let i = index"
+        *ngFor="let publication of getPublicationsByTab(tab); let i = index"
         [publication]="publication"
-        [lastItem]="i == publications.length - 1"
-      >
-      </bmc-publication>
+        [lastItem]="
+          tab && i == getPublicationsByTab(tab).length - 1 ? true : false
+        "
+      ></bmc-publication>
     </mat-tab>
   </mat-tab-group>
 </div>
