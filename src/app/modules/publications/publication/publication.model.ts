@@ -1,9 +1,8 @@
 export interface Publication {
   type: string;
+  year: number;
   title: string;
   subtitle?: string;
-  publicationURL?: string;
   reference?: any;
-  link?: string;
-  image?: string;
+  publisherLink?: string;
 }

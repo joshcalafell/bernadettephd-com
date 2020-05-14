@@ -6,8 +6,11 @@
       </h4>
     </mat-card-title>
     <mat-card-subtitle>
-      <p matLine class="item opacity" *ngIf="publication.subtitle">
-        <i>"{{ publication.subtitle }}"</i>
+      <p matLine class="item opacity" *ngIf="publication.year">
+        {{ publication.year }}
+      </p>
+      <p matLine class="item opacity" *ngIf="!publication.year">
+        Ongoing
       </p>
     </mat-card-subtitle>
   </mat-card-header>
@@ -15,7 +18,7 @@
     <button
       mat-raised-button
       color="primary"
-      *ngIf="publication.publicationURL"
+      *ngIf="publication.publisherLink"
       target="_blank"
     >
       Publisher Link<mat-icon class="download-icon">exit_to_app</mat-icon>

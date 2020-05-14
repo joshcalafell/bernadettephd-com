@@ -18,12 +18,6 @@ export class PublicationComponent implements OnInit {
   @Input() publication: Publication;
   @Input() lastItem: boolean;
 
-  tabs: string[] = [];
-
-  profileUrl: Observable<string | null>;
-
-  link: string;
-
   constructor(
     private storage: AngularFireStorage,
     public afAuth: AngularFireAuth,
@@ -38,10 +32,8 @@ export class PublicationComponent implements OnInit {
       data: {}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    // });
   }
 
   savePDF(publication: Publication) {

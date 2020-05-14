@@ -38,6 +38,8 @@ export class FirestoreService {
   }
 
   getPublications() {
-    return this.db.collection<Publication>('publications', ref => ref);
+    return this.db.collection<Publication>('publications', ref =>
+      ref.orderBy('year', 'desc').orderBy('title', 'desc')
+    );
   }
 }
