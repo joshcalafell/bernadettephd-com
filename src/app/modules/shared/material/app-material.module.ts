@@ -2,12 +2,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
 import {
   MatCommonModule,
   MatNativeDateModule,
   MatOptionModule,
-  MatPseudoCheckboxModule,
   MatRippleModule
 } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -24,38 +22,29 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTreeModule } from '@angular/material/tree';
 
 const material = [
-  MatDialogModule,
-  MatInputModule,
   LayoutModule,
   MatButtonModule,
   MatCardModule,
-  MatChipsModule,
   MatCommonModule,
+  MatDialogModule,
   MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
-  MatTabsModule,
   MatNativeDateModule,
   MatOptionModule,
-  MatPseudoCheckboxModule,
+  MatProgressSpinnerModule,
   MatRippleModule,
   MatSelectModule,
   MatSidenavModule,
   MatSlideToggleModule,
-  MatToolbarModule,
-  MatTreeModule, // Widdle down to what's used at top level
-  MatProgressSpinnerModule,
-  MatGridListModule,
-  MatCardModule,
-  MatMenuModule,
-  MatIconModule,
-  MatButtonModule
+  MatTabsModule,
+  MatToolbarModule
 ];
 
 @NgModule({
