@@ -22,8 +22,8 @@
       *ngFor="let tab of tabs"
     >
       <bmc-publication
-        *ngFor="let publication of getPublicationsByTab(tab); let i = index"
-        [publication]="publication"
+        *ngFor="let item of getPublicationsByTab(tab); let i = index"
+        [item]="item"
         [lastItem]="
           tab && i == getPublicationsByTab(tab).length - 1 ? true : false
         "

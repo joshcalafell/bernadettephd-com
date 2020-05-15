@@ -8,7 +8,7 @@ import { Presentation } from './presentation.model';
   styleUrls: ['./presentation.component.scss']
 })
 export class PresentationComponent implements OnInit {
-  @Input() presentation: Presentation;
+  @Input() item: Presentation;
   @Input() lastItem: boolean;
   constructor() {}
 

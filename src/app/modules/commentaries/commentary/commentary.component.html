@@ -8,7 +8,7 @@
     <mat-card-subtitle>
       <p matLine class="item" *ngIf="item.author_last && item.author_first">
         {{ item.author_last }}, {{ item.author_first }} -
-        {{ item.publication }} ({{ item.date.seconds | timestamp }})
+        {{ item.publication }} ({{ item.date.seconds | yearPipe }})
       </p>
     </mat-card-subtitle>
   </mat-card-header>

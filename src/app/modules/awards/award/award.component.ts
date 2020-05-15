@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-
 import { Award } from './award.model';
+import { RouteBaseComponent } from 'src/app/components/route-base/route-base.component';
 
 @Component({
   selector: 'bmc-award',
@@ -9,8 +8,8 @@ import { Award } from './award.model';
   styleUrls: ['./award.component.scss']
 })
 export class AwardComponent {
-  @Input() award: Award;
+  @Input() item: Award;
   @Input() lastItem: boolean;
 
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 }

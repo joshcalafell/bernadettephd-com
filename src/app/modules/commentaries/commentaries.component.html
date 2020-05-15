@@ -4,8 +4,8 @@
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
   <bmc-commmentary
-    *ngFor="let commentary of commentaries; let i = index"
-    [item]="commentary"
+    *ngFor="let item of commentaries; let i = index"
+    [item]="item"
     [lastItem]="i == commentaries.length - 1"
   ></bmc-commmentary>
 </div>

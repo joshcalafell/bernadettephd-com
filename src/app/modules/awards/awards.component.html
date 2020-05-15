@@ -1,17 +1,15 @@
 <div class="section">
   <h2 class="page-title mat-headline">Awards and Honors</h2>
-
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
-
   <mat-tab-group *ngIf="!loading">
     <mat-tab
       label="{{ tab | titlecase }} ({{ getCountByTab(tab) }})"
       *ngFor="let tab of tabs"
     >
       <bmc-award
-        *ngFor="let award of getAwardsByTab(tab); let i = index"
-        [award]="award"
-        [lastItem]="tab && i == getAwardsByTab(tab).length - 1 ? true : false"
+        *ngFor="let item of getItemsByTab(tab); let i = index"
+        [item]="item"
+        [lastItem]="tab && i == getItemsByTab(tab).length - 1 ? true : false"
       ></bmc-award>
     </mat-tab>
   </mat-tab-group>

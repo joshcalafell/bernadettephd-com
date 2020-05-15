@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import * as moment from 'moment';
 
-@Pipe({ name: 'timestamp' })
-export class TimestampPipe implements PipeTransform {
+@Pipe({ name: 'yearPipe' })
+export class YearPipe implements PipeTransform {
   transform(value: number): String {
     return moment
       .unix(value)

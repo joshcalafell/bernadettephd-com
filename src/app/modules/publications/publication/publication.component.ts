@@ -15,7 +15,7 @@ const FileSaver = require('file-saver');
   styleUrls: ['./publication.component.scss']
 })
 export class PublicationComponent implements OnInit {
-  @Input() publication: Publication;
+  @Input() item: Publication;
   @Input() lastItem: boolean;
 
   constructor(

@@ -9,23 +9,23 @@
 
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
+  <bmc-presentation
+    *ngFor="let item of presentations; let i = index"
+    [item]="item"
+    [lastItem]="presentations && i == presentations.length - 1 ? true : false"
+  >
+  </bmc-presentation>
+  <!-- 
   <mat-tab-group>
     <mat-tab label="List">
-      <bmc-presentation
-        *ngFor="let presentation of presentations; let i = index"
-        [presentation]="presentation"
-        [lastItem]="
-          presentations && i == presentations.length - 1 ? true : false
-        "
-      >
-      </bmc-presentation>
+
     </mat-tab>
 
     <mat-tab label="Map">
       <bmc-presentation-map
         *ngIf="!loading"
-        [presentations]="presentations"
+        [item]="item"
       ></bmc-presentation-map>
     </mat-tab>
-  </mat-tab-group>
+  </mat-tab-group> -->
 </div>

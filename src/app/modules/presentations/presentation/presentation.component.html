@@ -1,25 +1,28 @@
 <mat-card class="bmc-list-item mat-elevation-z2">
   <mat-card-header>
     <mat-card-title>
-      <h4 matLine class="title">
-        {{ presentation.role }} ({{ presentation.date.seconds | timestamp }})
+      <h4 class="title">
+        {{ item.role }}
       </h4>
     </mat-card-title>
     <mat-card-subtitle>
-      <p matLine class="item opcaity-med" *ngIf="presentation.title">
-        <i>"{{ presentation.title }}"</i>
+      <p class="item opacity" *ngIf="item.date">
+        {{ item.date.seconds | yearPipe }}
       </p>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p matLine class="item" *ngIf="presentation.department">
-      {{ presentation.department }}
+    <p class="item" *ngIf="item.title">
+      <i>"{{ item.title }}"</i>
     </p>
-    <p matLine class="item" *ngIf="presentation.school">
-      {{ presentation.school }}
+    <p class="item" *ngIf="item.department">
+      {{ item.department }}
     </p>
-    <p matLine class="item" *ngIf="presentation.location">
-      <span class="item">{{ presentation.location }}</span>
+    <p class="item" *ngIf="item.school">
+      {{ item.school }}
+    </p>
+    <p class="item" *ngIf="item.location">
+      <span class="item">{{ item.location }}</span>
     </p>
   </mat-card-content>
 </mat-card>

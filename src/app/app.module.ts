@@ -20,6 +20,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouteBaseComponent } from './components/route-base/route-base.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutModule,
     ReactiveFormsModule
   ],
-  exports: [GoogleSigninDirective],
+  exports: [GoogleSigninDirective, CommonModule],
 
   bootstrap: [AppComponent]
 })

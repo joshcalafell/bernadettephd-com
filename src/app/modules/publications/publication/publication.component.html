@@ -2,14 +2,14 @@
   <mat-card-header>
     <mat-card-title>
       <h4 matLine class="title">
-        {{ publication.title }}
+        {{ item.title }}
       </h4>
     </mat-card-title>
     <mat-card-subtitle>
-      <p matLine class="item opacity" *ngIf="publication.year < 3000">
-        {{ publication.year }}
+      <p matLine class="item opacity" *ngIf="item.year < 3000">
+        {{ item.year }}
       </p>
-      <p matLine class="item opacity" *ngIf="publication.year >= 3000">
+      <p matLine class="item opacity" *ngIf="item.year >= 3000">
         Ongoing
       </p>
     </mat-card-subtitle>
@@ -18,8 +18,8 @@
     <a
       mat-raised-button
       color="primary"
-      href="{{ publication.publisherLink }}"
-      *ngIf="publication.publisherLink"
+      href="{{ item.publisherLink }}"
+      *ngIf="item.publisherLink"
       target="_blank"
     >
       Publisher Link<mat-icon class="download-icon">exit_to_app</mat-icon>
@@ -27,8 +27,8 @@
     <button
       mat-raised-button
       color="primary"
-      *ngIf="publication.reference && (afAuth.authState | async)"
-      (click)="savePDF(publication)"
+      *ngIf="item.reference && (afAuth.authState | async)"
+      (click)="savePDF(item)"
     >
       Download PDF
       <mat-icon class="download-icon">cloud_download</mat-icon>
@@ -37,7 +37,7 @@
       mat-stroked-button
       color="primary"
       (click)="openDialog()"
-      *ngIf="publication.reference && !(afAuth.authState | async)"
+      *ngIf="item.reference && !(afAuth.authState | async)"
     >
       Login/Signup to Download
       <mat-icon class="download-icon">warning</mat-icon>
