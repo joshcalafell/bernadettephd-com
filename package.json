@@ -1,6 +1,6 @@
 {
   "name": "bernadettephd-com",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -25,7 +25,6 @@
     "@angular/router": "~9.1.7",
     "file-saver": "^2.0.2",
     "firebase": ">= 5.5.7 <8",
-    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "prettier": "^1.19.1",
     "rxjs": "~6.5.5",
