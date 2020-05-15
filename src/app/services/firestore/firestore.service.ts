@@ -18,7 +18,6 @@ export class FirestoreService {
   getCollection(collection: string): AngularFirestoreCollection<any> {
     switch (collection) {
       case 'awards': {
-        console.log('collection', collection);
         return this.database.collection<Award>('awards', ref =>
           ref.orderBy('date', 'desc')
         );
