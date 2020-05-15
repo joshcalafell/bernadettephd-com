@@ -4,32 +4,25 @@ import { Subscription } from 'rxjs';
 import { Presentation } from './presentation/presentation.model';
 import { FirestoreService } from '../../services/firestore/firestore.service';
 import { SeoService } from '../../services/seo/seo.service';
+import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
 
 @Component({
   selector: 'bmc-presentartions',
   templateUrl: './presentations.component.html',
   styleUrls: ['./presentations.component.scss']
 })
-export class PresentationsComponent implements OnInit {
-  presentations: Presentation[];
-  sub: Subscription;
+export class PresentationsComponent extends CollectionBaseComponent
+  implements OnInit {
+  // SEO
+  title: string = 'Presentations';
+  description: string =
+    'A list of presentations by Bernadette M. Calafell Ph.D';
 
-  loading: boolean = true;
-
-  constructor(public fs: FirestoreService, private seo: SeoService) {}
+  // Firestore collection name
+  collection: string = 'presentations';
 
   ngOnInit() {
-    this.seo.generateTags({
-      title: 'Bernadette M. Calafell Ph.D - Presentations',
-      description: 'A list of presentations given to Dr. Bernadette M. Calafell'
-    });
-
-    this.sub = this.fs
-      .getPresentations()
-      .valueChanges()
-      .subscribe(p => {
-        this.presentations = p;
-        this.loading = false;
-      });
+    super.initSEO(this.title, this.description);
+    super.fetchCollection(this.collection);
   }
 }

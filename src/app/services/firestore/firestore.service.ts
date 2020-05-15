@@ -57,11 +57,11 @@ export class FirestoreService {
   //   );
   // }
 
-  getMediaCommentary() {
-    return this.database.collection<Commentary>('media-commentary', ref =>
-      ref.orderBy('date', 'desc')
-    );
-  }
+  // getMediaCommentary() {
+  //   return this.database.collection<Commentary>('media-commentary', ref =>
+  //     ref.orderBy('date', 'desc')
+  //   );
+  // }
 
   getMentorships() {
     return this.database.collection<Advisee>('mentoring', ref =>
@@ -69,11 +69,11 @@ export class FirestoreService {
     );
   }
 
-  getPresentations() {
-    return this.database.collection<Presentation>('presentations', ref =>
-      ref.orderBy('date', 'desc')
-    );
-  }
+  // getPresentations() {
+  //   return this.database.collection<Presentation>('presentations', ref =>
+  //     ref.orderBy('date', 'desc')
+  //   );
+  // }
 
   getPublications() {
     return this.database.collection<Publication>('publications', ref =>

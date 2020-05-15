@@ -10,9 +10,9 @@
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
   <bmc-presentation
-    *ngFor="let item of presentations; let i = index"
+    *ngFor="let item of items; let i = index"
     [item]="item"
-    [lastItem]="presentations && i == presentations.length - 1 ? true : false"
+    [lastItem]="items && i == items.length - 1"
   >
   </bmc-presentation>
   <!-- 
