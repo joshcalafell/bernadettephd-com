@@ -76,11 +76,11 @@ $md-bmc-violet: (
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 $custom-typography: mat-typography-config(
-  $font-family: "Lato"
+  $font-family: "Roboto"
 );
 
 $custom-typography: mat-typography-config(
-  $font-family: "Lato",
+  $font-family: "Roboto",
   $headline: mat-typography-level(28px, 36px, 700),
   $body-1: mat-typography-level(16px, 22px, 500),
   $title: mat-typography-level(20px, 24px, 500)

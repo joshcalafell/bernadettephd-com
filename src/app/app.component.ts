@@ -10,16 +10,9 @@ import { ThemeService } from './services/theme/theme.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bernadettephd-com';
-  reference: string;
-  sub: Subscription;
   isDarkTheme: Observable<boolean>;
 
-  profileUrl: Observable<string | null>;
-  constructor(
-    private themeService: ThemeService,
-    private storage: AngularFireStorage
-  ) {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
     this.isDarkTheme = this.themeService.isdarkTheme;

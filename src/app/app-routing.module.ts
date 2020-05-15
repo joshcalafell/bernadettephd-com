@@ -4,66 +4,78 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'about',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    redirectTo: 'about'
   },
   {
     path: 'about',
-    loadChildren: () =>
-      import('./modules/about/about.module').then(m => m.AboutModule)
-  },
-  {
-    path: 'research',
-    loadChildren: () =>
-      import('./modules/research/research.module').then(m => m.ResearchModule)
-  },
-  {
-    path: 'awards',
-    loadChildren: () =>
-      import('./modules/awards/awards.module').then(m => m.AwardsModule)
-  },
-  {
-    path: 'publications',
-    loadChildren: () =>
-      import('./modules/publications/publications.module').then(
-        m => m.PublicationsModule
-      )
+    loadChildren: async () => {
+      const m = await import('./modules/about/about.module');
+      return m.AboutModule;
+    }
   },
   {
     path: 'advisees',
-    loadChildren: () =>
-      import('./modules/advisees/advisees.module').then(m => m.AdviseesModule)
+    loadChildren: async () => {
+      const m = await import('./modules/advisees/advisees.module');
+      return m.AdviseesModule;
+    }
   },
   {
-    path: 'commentary',
-    loadChildren: () =>
-      import('./modules/commentaries/commentaries.module').then(
-        m => m.CommentariesModule
-      )
-  },
-  {
-    path: 'presentations',
-    loadChildren: () =>
-      import('./modules/presentations/presentations.module').then(
-        m => m.PresentationsModule
-      )
-  },
-  {
-    path: '404',
-    loadChildren: () =>
-      import('./modules/not-found/not-found.module').then(m => m.NotFoundModule)
+    path: 'awards',
+    loadChildren: async () => {
+      const m = await import('./modules/awards/awards.module');
+      return m.AwardsModule;
+    }
   },
   {
     path: 'books',
-    loadChildren: () =>
-      import('./modules/books/books.module').then(m => m.BooksModule)
+    loadChildren: async () => {
+      const m = await import('./modules/books/books.module');
+      return m.BooksModule;
+    }
+  },
+  {
+    path: 'commentary',
+    loadChildren: async () => {
+      const m = await import('./modules/commentaries/commentaries.module');
+      return m.CommentariesModule;
+    }
+  },
+  {
+    path: 'presentations',
+    loadChildren: async () => {
+      const m = await import('./modules/presentations/presentations.module');
+      return m.PresentationsModule;
+    }
   },
   {
     path: 'philosophy',
-    loadChildren: () =>
-      import('./modules/philosophy/philosophy.module').then(
-        m => m.PhilosophyModule
-      )
+    loadChildren: async () => {
+      const m = await import('./modules/philosophy/philosophy.module');
+      return m.PhilosophyModule;
+    }
+  },
+  {
+    path: 'publications',
+    loadChildren: async () => {
+      const m = await import('./modules/publications/publications.module');
+      return m.PublicationsModule;
+    }
+  },
+  {
+    path: 'research',
+    loadChildren: async () => {
+      const m = await import('./modules/research/research.module');
+      return m.ResearchModule;
+    }
+  },
+  {
+    path: '404',
+    loadChildren: async () => {
+      const m = await import('./modules/not-found/not-found.module');
+      return m.NotFoundModule;
+    }
   },
   {
     path: '**',

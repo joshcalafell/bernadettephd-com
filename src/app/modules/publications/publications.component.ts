@@ -49,11 +49,6 @@ export class PublicationsComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogLoginComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
   }
 
   getPublicationsByTab(tab: string): Publication[] {
@@ -63,7 +58,6 @@ export class PublicationsComponent implements OnInit {
   }
 
   getCountByTab(tab: string): number {
-    console.log(tab, this.publications);
     return this.publications.filter(
       publication => publication.type.toLowerCase() === tab.toLowerCase()
     ).length;
