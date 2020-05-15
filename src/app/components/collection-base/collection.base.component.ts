@@ -33,9 +33,9 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
         this.loading = false;
         this.items.forEach((item: CollectionItem) => {
           if (item && item.type) {
-          }
-          if (item.type && this.tabs.indexOf(item.type) === -1) {
-            this.tabs.push(item.type);
+            if (this.tabs.indexOf(item.type) === -1) {
+              this.tabs.push(item.type);
+            }
           }
         });
       });
