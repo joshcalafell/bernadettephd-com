@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { Presentation } from './presentation/presentation.model';
-import { FirestoreService } from '../../services/firestore/firestore.service';
-import { SeoService } from '../../services/seo/seo.service';
 import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
 
 @Component({

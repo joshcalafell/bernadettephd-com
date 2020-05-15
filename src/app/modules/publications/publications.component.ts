@@ -1,11 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Publication } from './publication/publication.model';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
 import { DialogLoginComponent } from '../../components/login/dialog-login/dialog-login.component';
-import { FirestoreService } from '../../services/firestore/firestore.service';
-import { SeoService } from '../../services/seo/seo.service';
 import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
 
 @Component({
