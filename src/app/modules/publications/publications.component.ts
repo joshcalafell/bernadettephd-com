@@ -6,60 +6,28 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogLoginComponent } from '../../components/login/dialog-login/dialog-login.component';
 import { FirestoreService } from '../../services/firestore/firestore.service';
 import { SeoService } from '../../services/seo/seo.service';
+import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
 
 @Component({
   selector: 'bmc-publications',
   templateUrl: './publications.component.html',
   styleUrls: ['./publications.component.scss']
 })
-export class PublicationsComponent implements OnInit {
-  tabs: string[] = [];
+export class PublicationsComponent extends CollectionBaseComponent
+  implements OnInit {
+  // SEO
+  title: string = 'Publications';
+  description: string = 'A list of publications by Bernadette M. Calafell Ph.D';
 
-  publications: Publication[];
-  sub: Subscription;
-
-  loading: boolean = true;
-
-  constructor(
-    private fs: FirestoreService,
-    public afAuth: AngularFireAuth,
-    public dialog: MatDialog,
-    private seo: SeoService
-  ) {}
+  // Firestore collection name
+  collection: string = 'publications';
 
   ngOnInit() {
-    this.seo.generateTags({
-      title: 'Bernadette M. Calafell Ph.D - Publications',
-      description: 'A list of publications by Dr. Bernadette M. Calafell'
-    });
-
-    this.sub = this.fs
-      .getPublications()
-      .valueChanges()
-      .subscribe(p => {
-        this.publications = p;
-        this.publications.forEach(publication => {
-          if (this.tabs.indexOf(publication.type) === -1) {
-            this.tabs.push(publication.type);
-          }
-        });
-        this.loading = false;
-      });
+    super.initSEO(this.title, this.description);
+    super.fetchCollection(this.collection);
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogLoginComponent);
-  }
-
-  getPublicationsByTab(tab: string): Publication[] {
-    return this.publications.filter(
-      publication => publication.type.toLowerCase() === tab.toLowerCase()
-    );
-  }
-
-  getCountByTab(tab: string): number {
-    return this.publications.filter(
-      publication => publication.type.toLowerCase() === tab.toLowerCase()
-    ).length;
+    const dialogRef = super.dialog.open(DialogLoginComponent);
   }
 }

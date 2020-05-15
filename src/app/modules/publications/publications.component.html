@@ -1,6 +1,6 @@
 <div class="section">
   <h2 class="page-title mat-headline">Publications</h2>
-  <p class="margin-common" *ngIf="!(afAuth.authState | async)">
+  <p class="margin-common" *ngIf="!(auth.authState | async)">
     The 50+ publications available here are hosted at no cost to you, however to
     reduce liablity and costs for us, we ask that you have an
     <a
@@ -22,11 +22,9 @@
       *ngFor="let tab of tabs"
     >
       <bmc-publication
-        *ngFor="let item of getPublicationsByTab(tab); let i = index"
+        *ngFor="let item of getItemsByTab(tab); let i = index"
         [item]="item"
-        [lastItem]="
-          tab && i == getPublicationsByTab(tab).length - 1 ? true : false
-        "
+        [lastItem]="tab && i == getItemsByTab(tab).length - 1 ? true : false"
       ></bmc-publication>
     </mat-tab>
   </mat-tab-group>

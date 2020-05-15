@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 import { SeoService } from 'src/app/services/seo/seo.service';
 import { CollectionItem } from './collection-item.model';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { MatDialog } from '@angular/material/dialog';
 
 export class CollectionBaseComponent implements OnInit, OnDestroy {
   tabs: string[] = [];
@@ -10,7 +12,12 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   loading: boolean;
 
-  constructor(private database: FirestoreService, private seo: SeoService) {}
+  constructor(
+    public auth: AngularFireAuth,
+    public dialog: MatDialog,
+    private database: FirestoreService,
+    private seo: SeoService
+  ) {}
 
   ngOnInit() {
     this.loading = true;
