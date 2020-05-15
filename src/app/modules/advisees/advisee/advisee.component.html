@@ -2,18 +2,18 @@
   <mat-card-header>
     <mat-card-title>
       <h4 matLine class="title">
-        {{ advisee.student }}
-        <span *ngIf="advisee.year"> ({{ advisee.year }})</span>
-        <span *ngIf="!advisee.year"> (Current)</span>
+        {{ item.student }}
+        <span *ngIf="item.year"> ({{ item.year }})</span>
+        <span *ngIf="!item.year"> (Current)</span>
       </h4>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p matLine class="item" *ngIf="advisee.position">
-      {{ advisee.position }}
+    <p matLine class="item" *ngIf="item.position">
+      {{ item.position }}
     </p>
-    <p matLine class="item opacity" *ngIf="advisee.school">
-      {{ advisee.school }}
+    <p matLine class="item opacity" *ngIf="item.school">
+      {{ item.school }}
     </p>
   </mat-card-content>
 </mat-card>

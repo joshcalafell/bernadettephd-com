@@ -7,7 +7,7 @@ import { Advisee } from './advisee.model';
   styleUrls: ['./advisee.component.scss']
 })
 export class AdviseeComponent implements OnInit {
-  @Input() advisee: Advisee;
+  @Input() item: Advisee;
   @Input() lastItem: boolean;
 
   constructor() {}

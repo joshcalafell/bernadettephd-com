@@ -9,9 +9,9 @@
       *ngFor="let tab of tabs"
     >
       <bmc-advisee
-        *ngFor="let advisee of getAdviseesByTab(tab); let i = index"
-        [advisee]="advisee"
-        [lastItem]="tab && i == getAdviseesByTab(tab).length - 1 ? true : false"
+        *ngFor="let item of getItemsByTab(tab); let i = index"
+        [item]="item"
+        [lastItem]="tab && i == getItemsByTab(tab).length - 1"
       ></bmc-advisee>
     </mat-tab>
   </mat-tab-group>
