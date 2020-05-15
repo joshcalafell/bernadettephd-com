@@ -15,7 +15,7 @@ import { Publication } from 'src/app/modules/publications/publication/publicatio
 export class FirestoreService {
   constructor(private database: AngularFirestore) {}
 
-  getItems(collection: string): AngularFirestoreCollection<any> {
+  getCollection(collection: string): AngularFirestoreCollection<any> {
     switch (collection) {
       case 'awards': {
         console.log('collection', collection);

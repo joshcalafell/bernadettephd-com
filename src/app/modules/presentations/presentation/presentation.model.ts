@@ -4,6 +4,7 @@ interface PresentationCoords {
 }
 
 export interface Presentation {
+  type?: string;
   role: string; // Required
   date: any; // Required
   title?: string;
