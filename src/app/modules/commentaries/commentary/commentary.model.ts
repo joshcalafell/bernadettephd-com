@@ -7,4 +7,5 @@ export interface Commentary {
   link: string;
   accessed?: any;
   tags: String[];
+  type?: string;
 }

@@ -1,5 +1,8 @@
 import { Award } from '../../modules/awards/award/award.model';
 import { Presentation } from '../../modules/presentations/presentation/presentation.model';
+import { Advisee } from 'src/app/modules/advisees/advisee/advisee.model';
+import { Commentary } from 'src/app/modules/commentaries/commentary/commentary.model';
+import { Publication } from 'src/app/modules/publications/publication/publication.model';
 
 // interface IListItem {
 //     type: string;
@@ -22,4 +25,9 @@ import { Presentation } from '../../modules/presentations/presentation/presentat
 
 // }
 
-export type CollectionItem = Award | Presentation;
+export type CollectionItem =
+  | Award
+  | Presentation
+  | Advisee
+  | Commentary
+  | Publication;

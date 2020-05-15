@@ -38,7 +38,7 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
       .subscribe((res: CollectionItem[]): void => {
         this.items = res;
         this.loading = false;
-        this.items.forEach((item: CollectionItem) => {
+        this.items.forEach((item: any) => {
           if (item && item.type) {
             if (this.tabs.indexOf(item.type) === -1) {
               this.tabs.push(item.type);

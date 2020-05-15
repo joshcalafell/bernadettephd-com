@@ -49,35 +49,4 @@ export class FirestoreService {
       }
     }
   }
-
-  // getAwards() {
-  //   // TODO: Study Event Loop (microtasks vs. macrotasks) => https://www.youtube.com/watch?v=vn3tm0quoqE
-  //   return this.database.collection<Award>('awards', ref =>
-  //     ref.orderBy('date', 'desc')
-  //   );
-  // }
-
-  // getMediaCommentary() {
-  //   return this.database.collection<Commentary>('media-commentary', ref =>
-  //     ref.orderBy('date', 'desc')
-  //   );
-  // }
-
-  getMentorships() {
-    return this.database.collection<Advisee>('mentoring', ref =>
-      ref.orderBy('year', 'desc').orderBy('student', 'desc')
-    );
-  }
-
-  // getPresentations() {
-  //   return this.database.collection<Presentation>('presentations', ref =>
-  //     ref.orderBy('date', 'desc')
-  //   );
-  // }
-
-  getPublications() {
-    return this.database.collection<Publication>('publications', ref =>
-      ref.orderBy('year', 'desc').orderBy('title', 'desc')
-    );
-  }
 }
