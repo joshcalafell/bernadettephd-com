@@ -1,12 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { last } from 'rxjs/operators';
 
 @Component({
-  selector: 'bmc-list-item',
-  templateUrl: './list-item.component.html',
-  styleUrls: ['./list-item.component.scss']
+  selector: 'bmc-list-item-base',
+  templateUrl: './list-item-base.component.html',
+  styleUrls: ['./list-item-base.component.scss']
 })
-export class ListItemComponent implements OnInit {
+export class ListItemBaseComponent implements OnInit {
   @Input() title: string;
   @Input() subtitle?: string;
   @Input() date?: any;

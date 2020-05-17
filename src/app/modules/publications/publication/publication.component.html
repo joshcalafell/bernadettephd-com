@@ -1,4 +1,4 @@
-<mat-card class="bmc-list-item mat-elevation-z2">
+<!-- <mat-card class="bmc-list-item-base mat-elevation-z2">
   <mat-card-header>
     <mat-card-title>
       <h3 matLine class="title">
@@ -24,23 +24,24 @@
     >
       Publisher Link<mat-icon class="download-icon">exit_to_app</mat-icon>
     </a>
-    <button
+    <a
+      href="#"
       mat-raised-button
       color="primary"
       *ngIf="item.reference && (afAuth.authState | async)"
-      (click)="savePDF(item)"
+      (click)="$event.preventDefault(); savePDF(item)"
     >
       Download PDF
       <mat-icon class="download-icon">cloud_download</mat-icon>
-    </button>
+  </a>
     <a
       mat-stroked-button
       color="primary"
-      (click)="openDialog()"
+      (click)="$event.preventDefault(); openDialog()"
       *ngIf="item.reference && !(afAuth.authState | async)"
     >
       Login/Signup to Download
       <mat-icon class="download-icon">warning</mat-icon>
     </a>
   </mat-card-actions>
-</mat-card>
+</mat-card> -->

@@ -5,10 +5,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SharedModule } from '../shared/shared.module';
 import { PublicationsRoutingModule } from './publications-routing.module';
 import { PublicationsComponent } from './publications.component';
-import { PublicationComponent } from './publication/publication.component';
+import { ListItemPublicationsComponent } from 'src/app/components/list-item-publications/list-item-publications.component';
 
 @NgModule({
-  declarations: [PublicationsComponent, PublicationComponent],
+  declarations: [PublicationsComponent, ListItemPublicationsComponent],
   imports: [
     CommonModule,
     PublicationsRoutingModule,

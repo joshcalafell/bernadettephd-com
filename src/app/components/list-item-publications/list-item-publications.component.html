@@ -1,0 +1,49 @@
+<div class="bmc-list-item">
+  <h3 class="item-title">"{{ title }}"</h3>
+  <h4 class="item-subtitle" *ngIf="year && year < 3000">
+    {{ year }}
+  </h4>
+  <h4 class="item-subtitle" *ngIf="year && year >= 3000">
+    Ongoing
+  </h4>
+  <h4 class="item-subtitle" *ngIf="subtitle">
+    {{ subtitle }}
+  </h4>
+  <p class="item" *ngIf="line1">
+    {{ line1 }}
+  </p>
+  <p class="item" *ngIf="line2">
+    {{ line2 }}
+  </p>
+  <div class="btn-row flex-row">
+    <a
+      mat-raised-button
+      color="primary"
+      href="{{ publisherLink }}"
+      *ngIf="publisherLink"
+      target="_blank"
+    >
+      Publisher Link&nbsp;<mat-icon class="download-icon">exit_to_app</mat-icon>
+    </a>
+    <a
+      href="#"
+      mat-raised-button
+      color="primary"
+      *ngIf="reference && authorized"
+      (click)="$event.preventDefault(); savePDF(title, reference)"
+    >
+      Download PDF&nbsp;
+      <mat-icon class="download-icon">cloud_download</mat-icon>
+    </a>
+    <a
+      mat-stroked-button
+      color="primary"
+      (click)="$event.preventDefault(); openDialog()"
+      *ngIf="reference && !authorized"
+    >
+      Login/Signup to Download&nbsp;
+      <mat-icon class="download-icon">warning</mat-icon>
+    </a>
+  </div>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

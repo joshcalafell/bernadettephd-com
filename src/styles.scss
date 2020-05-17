@@ -101,3 +101,39 @@ p.item {
     margin-left: 16px;
   }
 }
+
+.bmc-list-item {
+  @include flex-col(flex-start, flex-start);
+  padding: 16px;
+  h3 {
+    font-family: "Assistant";
+  }
+  .item-subtitle {
+    opacity: 0.5;
+  }
+  .item-title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.bmc-btn {
+  width: 175px;
+}
+
+.mat-raised-button {
+  margin-right: $margin-common;
+}
+
+.download-icon {
+  position: relative;
+  top: -3px;
+}
+
+.title-icon {
+  position: relative;
+  top: 5px;
+}

@@ -20,7 +20,6 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ListItemComponent } from './components/list-item/list-item.component';
 
 @NgModule({
   declarations: [
