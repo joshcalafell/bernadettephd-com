@@ -1,0 +1,22 @@
+<div class="bmc-list-item">
+  <h3 class="item-title">
+    {{ title }}
+  </h3>
+  <h4 class="item-subtitle" *ngIf="date">{{ date.seconds | yearPipe }}</h4>
+  <h4 class="item-subtitle" *ngIf="subtitle">
+    {{ subtitle }}
+  </h4>
+  <p class="item" *ngIf="line1">
+    {{ line1 }}
+  </p>
+  <p class="item" *ngIf="line2">
+    {{ line2 }}
+  </p>
+  <p class="item" *ngIf="line3">
+    {{ line3 }}
+  </p>
+  <p class="item" *ngIf="line4">
+    {{ line4 }}
+  </p>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

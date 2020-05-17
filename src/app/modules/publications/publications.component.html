@@ -21,11 +21,15 @@
       label="{{ tab }} ({{ getCountByTab(tab) }})"
       *ngFor="let tab of tabs"
     >
-      <bmc-publication
+      <bmc-list-item-publications
         *ngFor="let item of getItemsByTab(tab); let i = index"
-        [item]="item"
-        [lastItem]="tab && i == getItemsByTab(tab).length - 1 ? true : false"
-      ></bmc-publication>
+        [title]="item.title"
+        [year]="item.year"
+        [publisherLink]="item.publisherLink"
+        [reference]="item.reference"
+        [authorized]="auth.authState | async"
+        [lastItem]="tab && i == getItemsByTab(tab).length - 1"
+      ></bmc-list-item-publications>
     </mat-tab>
   </mat-tab-group>
 </div>

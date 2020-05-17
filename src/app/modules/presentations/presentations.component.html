@@ -9,12 +9,16 @@
 
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
-  <bmc-presentation
+  <bmc-list-item
     *ngFor="let item of items; let i = index"
-    [item]="item"
+    [title]="item.role"
+    [date]="item.date"
+    [line1]="item.title"
+    [line2]="item.department"
+    [line3]="item.school"
+    [line4]="item.location"
     [lastItem]="items && i == items.length - 1"
-  >
-  </bmc-presentation>
+  ></bmc-list-item>
   <!-- 
   <mat-tab-group>
     <mat-tab label="List">
