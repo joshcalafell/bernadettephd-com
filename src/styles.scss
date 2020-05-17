@@ -15,6 +15,10 @@ h1 {
   flex: 1 0 0;
 }
 
+.page-title {
+  color: $color-primary;
+}
+
 a.link {
   color: $color-primary;
   text-decoration: none;
@@ -23,8 +27,8 @@ a.link {
   }
 }
 
-section {
-  background: #303030;
+.section {
+  // padding: $margin-common;
 }
 
 footer {
@@ -64,8 +68,7 @@ p {
   margin: 0 auto;
 }
 
-h4.title {
-  font-size: 16px !important;
+h3.title {
   font-weight: bold;
   color: $color-primary;
 }
@@ -94,29 +97,6 @@ p.item {
     font-weight: 500;
     padding-top: 16px;
     padding-bottom: 16px;
-  }
-}
-
-.list-item {
-  margin: 16px 16px;
-  padding-top: $padding-common !important;
-  padding-bottom: $padding-common !important;
-}
-
-.mat-card.bmc-list-item {
-  margin: 16px;
-
-  .mat-card-content {
-    margin: 0 16px !important;
-  }
-
-  .mat-card-actions {
-    margin: 0 $margin-common $margin-common $margin-common !important;
-  }
-}
-
-.section {
-  h2 {
     margin-top: 16px;
     margin-left: 16px;
   }

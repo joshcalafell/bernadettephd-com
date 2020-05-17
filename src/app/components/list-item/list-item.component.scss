@@ -1,4 +1,4 @@
-@import "../../../../styles/mixin.scss";
+@import "../../../styles/mixin.scss";
 
 .bmc-list-item {
   @include flex-col(flex-start, flex-start);
@@ -6,7 +6,7 @@
   h3 {
     font-family: "Assistant";
   }
-  .opacity {
+  .item-subtitle {
     opacity: 0.5;
   }
   .item-title {

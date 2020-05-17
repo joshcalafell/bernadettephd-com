@@ -1,20 +1,13 @@
-<mat-card class="bmc-list-item mat-elevation-z2">
-  <mat-card-header>
-    <mat-card-title>
-      <h4 matLine class="title">
-        {{ item.name }}
-      </h4>
-    </mat-card-title>
-    <mat-card-subtitle>
-      <p matLine class="item" *ngIf="item.date">
-        {{ item.date.seconds | yearPipe }}
-      </p>
-    </mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p matLine class="item opacity" *ngIf="item.department">
-      {{ item.department }}
-    </p>
-    <p matLine class="item" *ngIf="item.issuer">{{ item.issuer }}</p>
-  </mat-card-content>
-</mat-card>
+<div class="bmc-list-item">
+  <h3 class="item-title mat-headline">
+    {{ item.name }}
+  </h3>
+  <h4 class="item-subtitle opacity" *ngIf="item.date">
+    {{ item.date.seconds | yearPipe }}
+  </h4>
+  <p class="item" *ngIf="item.department">
+    {{ item.department }}
+  </p>
+  <p matLine class="item" *ngIf="item.issuer">{{ item.issuer }}</p>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>
