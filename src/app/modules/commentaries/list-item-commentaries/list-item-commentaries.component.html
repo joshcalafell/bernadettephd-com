@@ -1,0 +1,25 @@
+<div class="bmc-list-item">
+  <h3 class="item-title">"{{ title }}"</h3>
+  <h4 class="item-subtitle" *ngIf="date">
+    {{ author_last }}, {{ author_first }} ({{ date.seconds | yearPipe }})
+  </h4>
+  <p class="item" *ngIf="publication">
+    {{ publication }}
+  </p>
+  <p class="item" *ngIf="!link">
+    <i>No Link Available...</i>
+  </p>
+  <div class="btn-row flex-row" *ngIf="link">
+    <a
+      mat-raised-button
+      color="primary"
+      href="{{ link }}"
+      target="_blank"
+      matLine
+      class="item link"
+      *ngIf="link"
+      >See Article <mat-icon class="exit-icon">exit_to_app</mat-icon></a
+    >
+  </div>
+</div>
+<mat-divider *ngIf="!lastItem"></mat-divider>

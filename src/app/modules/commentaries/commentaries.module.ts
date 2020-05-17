@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { CommentaryRoutingModule } from './commentaries-routing.module';
 import { CommentariesComponent } from './commentaries.component';
-import { CommentaryComponent } from './commentary/commentary.component';
 import { SharedModule } from '../shared/shared.module';
+import { ListItemCommentariesComponent } from './list-item-commentaries/list-item-commentaries.component';
 
 @NgModule({
-  declarations: [CommentariesComponent, CommentaryComponent],
+  declarations: [CommentariesComponent, ListItemCommentariesComponent],
   imports: [CommonModule, SharedModule, CommentaryRoutingModule]
 })
 export class CommentariesModule {}

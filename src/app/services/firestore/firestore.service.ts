@@ -3,8 +3,8 @@ import {
   AngularFirestore,
   AngularFirestoreCollection
 } from '@angular/fire/firestore';
-import { Award } from 'src/app/modules/awards/award/award.model';
-import { Commentary } from 'src/app/modules/commentaries/commentary/commentary.model';
+import { Award } from 'src/app/modules/awards/award.model';
+import { Commentary } from 'src/app/modules/commentaries/commentary.model';
 import { Advisee } from 'src/app/modules/advisees/advisee/advisee.model';
 import { Presentation } from 'src/app/modules/presentations/presentation/presentation.model';
 import { Publication } from 'src/app/modules/publications/publication/publication.model';

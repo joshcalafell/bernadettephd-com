@@ -14,6 +14,8 @@ export class ListItemComponent implements OnInit {
   @Input() line3?: string;
   @Input() line4?: string;
   @Input() lastItem: boolean;
+  @Input() author_first?: string;
+  @Input() author_last?: string;
 
   constructor() {}
 

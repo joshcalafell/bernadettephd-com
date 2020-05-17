@@ -1,7 +1,10 @@
 <div class="bmc-list-item">
   <h3 class="item-title">"{{ title }}"</h3>
-  <h4 class="item-subtitle" *ngIf="year">
+  <h4 class="item-subtitle" *ngIf="year && year < 3000">
     {{ year }}
+  </h4>
+  <h4 class="item-subtitle" *ngIf="year && year >= 3000">
+    Ongoing
   </h4>
   <div class="btn-row flex-row">
     <a
