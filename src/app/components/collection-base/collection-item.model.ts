@@ -1,6 +1,6 @@
 import { Award } from '../../modules/awards/award.model';
 import { Presentation } from '../../modules/presentations/presentation/presentation.model';
-import { Advisee } from 'src/app/modules/advisees/advisee/advisee.model';
+import { Advisee } from 'src/app/modules/advisees/advisee.model';
 import { Commentary } from 'src/app/modules/commentaries/commentary.model';
 import { Publication } from 'src/app/modules/publications/publication/publication.model';
 
