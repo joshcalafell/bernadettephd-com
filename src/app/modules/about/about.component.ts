@@ -3,16 +3,16 @@ import { SeoService } from '../../services/seo/seo.service';
 
 @Component({
   selector: 'bmc-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  templateUrl: './about.component.html'
 })
 export class AboutComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.seo.generateTags({
-      title: 'Bernadette M. Calafell Ph.D - About',
-      description: 'Home page for Bernadette M. Calafell Ph.D'
+      description: 'Home page for Bernadette M. Calafell Ph.D',
+      title: 'Bernadette M. Calafell Ph.D - About'
     });
   }
 }

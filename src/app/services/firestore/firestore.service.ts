@@ -3,9 +3,9 @@ import {
   AngularFirestore,
   AngularFirestoreCollection
 } from '@angular/fire/firestore';
-import { Award } from 'src/app/modules/awards/award/award.model';
-import { Commentary } from 'src/app/modules/commentaries/commentary/commentary.model';
-import { Advisee } from 'src/app/modules/advisees/advisee/advisee.model';
+import { IAward } from 'src/app/modules/awards/award/award.model';
+import { ICommentary } from 'src/app/modules/commentaries/commentary/commentary.model';
+import { IAdvisee } from 'src/app/modules/advisees/advisee/advisee.model';
 import { Presentation } from 'src/app/modules/presentations/presentation/presentation.model';
 import { Publication } from 'src/app/modules/publications/publication/publication.model';
 
@@ -18,19 +18,19 @@ export class FirestoreService {
   getCollection(collection: string): AngularFirestoreCollection<any> {
     switch (collection) {
       case 'awards': {
-        return this.database.collection<Award>('awards', ref =>
+        return this.database.collection<IAward>('awards', ref =>
           ref.orderBy('date', 'desc')
         );
       }
 
       case 'media-commentary': {
-        return this.database.collection<Commentary>('media-commentary', ref =>
+        return this.database.collection<ICommentary>('media-commentary', ref =>
           ref.orderBy('date', 'desc')
         );
       }
 
       case 'mentoring': {
-        return this.database.collection<Advisee>('mentoring', ref =>
+        return this.database.collection<IAdvisee>('mentoring', ref =>
           ref.orderBy('year', 'desc').orderBy('student', 'desc')
         );
       }

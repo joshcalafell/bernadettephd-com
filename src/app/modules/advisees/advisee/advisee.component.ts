@@ -1,16 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Advisee } from './advisee.model';
+import { Component, Input } from '@angular/core';
+import { IAdvisee } from './advisee.model';
 
 @Component({
   selector: 'bmc-advisee',
-  templateUrl: './advisee.component.html',
-  styleUrls: ['./advisee.component.scss']
+  styleUrls: ['./advisee.component.scss'],
+  templateUrl: './advisee.component.html'
 })
-export class AdviseeComponent implements OnInit {
-  @Input() item: Advisee;
-  @Input() lastItem: boolean;
+export class AdviseeComponent {
+  @Input() private item: IAdvisee;
+  @Input() private lastItem: boolean;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

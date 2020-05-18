@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { Award } from './award.model';
+import { IAward } from './award.model';
 
 @Component({
   selector: 'bmc-award',
-  templateUrl: './award.component.html',
-  styleUrls: ['./award.component.scss']
+  styleUrls: ['./award.component.scss'],
+  templateUrl: './award.component.html'
 })
 export class AwardComponent {
-  @Input() item: Award;
-  @Input() lastItem: boolean;
+  @Input() public item: IAward;
+  @Input() public lastItem: boolean;
 
   constructor() {}
 }

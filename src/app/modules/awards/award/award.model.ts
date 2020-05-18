@@ -1,4 +1,4 @@
-export interface Award {
+export interface IAward {
   name?: string;
   type: string;
   date?: any;

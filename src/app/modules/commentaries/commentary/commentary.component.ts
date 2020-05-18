@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Commentary } from './commentary.model';
+import { ICommentary } from './commentary.model';
 
 @Component({
   selector: 'bmc-commmentary',
@@ -7,10 +7,10 @@ import { Commentary } from './commentary.model';
   styleUrls: ['./commentary.component.scss']
 })
 export class CommentaryComponent implements OnInit {
-  @Input() item: Commentary;
-  @Input() lastItem: boolean;
+  @Input() public item: ICommentary;
+  @Input() public lastItem: boolean;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 }

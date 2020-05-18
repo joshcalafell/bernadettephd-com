@@ -6,7 +6,7 @@ import { AdviseesComponent } from './advisees.component';
 const routes: Routes = [{ path: '', component: AdviseesComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)]
 })
 export class AdviseesRoutingModule {}

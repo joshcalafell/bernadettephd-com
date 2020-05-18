@@ -1,4 +1,4 @@
-export interface Advisee {
+export interface IAdvisee {
   type: string;
   student: string;
   year?: number;

@@ -3,20 +3,20 @@ import { CollectionBaseComponent } from 'src/app/components/collection-base/coll
 
 @Component({
   selector: 'bmc-commmentaries',
-  templateUrl: './commentaries.component.html',
-  styleUrls: ['./commentaries.component.scss']
+  styleUrls: ['./commentaries.component.scss'],
+  templateUrl: './commentaries.component.html'
 })
 export class CommentariesComponent extends CollectionBaseComponent
   implements OnInit {
   // SEO
-  title: string = 'Media Commentary';
-  description: string =
+  public title = 'Media ICommentary';
+  public description =
     'A list of media commentaries by Bernadette M. Calafell Ph.D';
 
   // Firestore collection name
-  collection: string = 'media-commentary';
+  public collection = 'media-commentary';
 
-  ngOnInit() {
+  public ngOnInit() {
     super.initSEO(this.title, this.description);
     super.fetchCollection(this.collection);
   }

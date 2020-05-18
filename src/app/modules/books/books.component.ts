@@ -3,16 +3,16 @@ import { SeoService } from '../../services/seo/seo.service';
 
 @Component({
   selector: 'bmc-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.scss']
+  styleUrls: ['./books.component.scss'],
+  templateUrl: './books.component.html'
 })
 export class BooksComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.seo.generateTags({
-      title: 'Bernadette M. Calafell Ph.D - Books',
-      description: 'A list of books written by Dr. Bernadette M. Calafell'
+      description: 'A list of books written by Dr. Bernadette M. Calafell',
+      title: 'Bernadette M. Calafell Ph.D - Books'
     });
   }
 }

@@ -7,10 +7,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { MatDialog } from '@angular/material/dialog';
 
 export class CollectionBaseComponent implements OnInit, OnDestroy {
-  tabs: string[] = [];
-  items: CollectionItem[];
-  subscription: Subscription;
-  loading: boolean;
+  public tabs: string[] = [];
+  public items: CollectionItem[];
+  public subscription: Subscription;
+  public loading: boolean;
 
   constructor(
     public auth: AngularFireAuth,
@@ -19,19 +19,19 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
     private seo: SeoService
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.loading = true;
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  initSEO(title: string, description: string): void {
+  public initSEO(title: string, description: string): void {
     this.seo.generateTags({ title, description });
   }
 
-  fetchCollection(collection: string): void {
+  public fetchCollection(collection: string): void {
     this.subscription = this.database
       .getCollection(collection)
       .valueChanges()
@@ -48,7 +48,7 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
       });
   }
 
-  getItemsByTab(tab: string): CollectionItem[] {
+  public getItemsByTab(tab: string): CollectionItem[] {
     return this.items.filter((item: CollectionItem) => {
       if (item.type) {
         return item.type.toLowerCase() === tab.toLowerCase();
@@ -56,7 +56,7 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
     });
   }
 
-  getCountByTab(tab: string): number {
+  public getCountByTab(tab: string): number {
     return this.items.filter(
       (item: CollectionItem) => item.type.toLowerCase() === tab.toLowerCase()
     ).length;

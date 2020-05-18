@@ -3,18 +3,18 @@ import { CollectionBaseComponent } from 'src/app/components/collection-base/coll
 
 @Component({
   selector: 'bmc-advisees',
-  templateUrl: './advisees.component.html',
-  styleUrls: ['./advisees.component.scss']
+  styleUrls: ['./advisees.component.scss'],
+  templateUrl: './advisees.component.html'
 })
 export class AdviseesComponent extends CollectionBaseComponent
   implements OnInit {
-  title: string = 'Advisees';
-  description: string = 'A list of advisees of Bernadette M. Calafell Ph.D';
+  public title = 'Advisees';
+  public description = 'A list of advisees of Bernadette M. Calafell Ph.D';
 
   // Firestore collection name
-  collection: string = 'mentoring';
+  public collection = 'mentoring';
 
-  ngOnInit() {
+  public ngOnInit() {
     super.initSEO(this.title, this.description);
     super.fetchCollection(this.collection);
   }

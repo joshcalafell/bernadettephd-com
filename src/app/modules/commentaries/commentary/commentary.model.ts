@@ -1,4 +1,4 @@
-export interface Commentary {
+export interface ICommentary {
   author_first?: string;
   author_last?: string;
   title: string;
@@ -6,6 +6,6 @@ export interface Commentary {
   date?: any;
   link: string;
   accessed?: any;
-  tags: String[];
+  tags: string[];
   type?: string;
 }

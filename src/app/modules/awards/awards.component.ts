@@ -3,19 +3,19 @@ import { CollectionBaseComponent } from 'src/app/components/collection-base/coll
 
 @Component({
   selector: 'bmc-awards',
-  templateUrl: './awards.component.html',
-  styleUrls: ['./awards.component.scss']
+  styleUrls: ['./awards.component.scss'],
+  templateUrl: './awards.component.html'
 })
 export class AwardsComponent extends CollectionBaseComponent implements OnInit {
   // SEO
-  title: string = 'Awards';
-  description: string =
+  public title = 'Awards';
+  public description =
     'A list of awards granted to Bernadette M. Calafell Ph.D';
 
   // Firestore collection name
-  collection: string = 'awards';
+  public collection = 'awards';
 
-  ngOnInit() {
+  public ngOnInit() {
     super.initSEO(this.title, this.description);
     super.fetchCollection(this.collection);
   }
