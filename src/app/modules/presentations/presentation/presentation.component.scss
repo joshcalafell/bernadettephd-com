@@ -1,1 +1,6 @@
 @import "../../../../styles/mixin.scss";
+
+.header-image--presentation {
+  background-image: url("../../../../assets/mat-header-icons/presentation.png");
+  background-size: cover;
+}

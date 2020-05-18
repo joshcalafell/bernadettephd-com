@@ -10,8 +10,8 @@
   }
 }
 
-.book-header-image {
-  background-image: url("../../../assets/book.png");
+.header-image--book {
+  background-image: url("../../../assets/mat-header-icons/book.png");
   background-size: cover;
 }
 
@@ -32,9 +32,4 @@
   @include tablet {
     margin-left: 16px;
   }
-}
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
 }
