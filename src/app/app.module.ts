@@ -20,6 +20,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductListModule } from './components/product-list/product-list.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     AppMaterialModule,
     PipesModule,
+    ProductListModule,
     // LoginModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

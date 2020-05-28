@@ -5,6 +5,7 @@ import { SeoService } from 'src/app/services/seo/seo.service';
 import { CollectionItem } from './collection-item.model';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogLoginComponent } from '../login/dialog-login/dialog-login.component';
 
 export class CollectionBaseComponent implements OnInit, OnDestroy {
   tabs: string[] = [];
@@ -14,7 +15,7 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
 
   constructor(
     public auth: AngularFireAuth,
-    public dialog: MatDialog,
+    private dialog: MatDialog,
     private database: FirestoreService,
     private seo: SeoService
   ) {}
@@ -60,5 +61,9 @@ export class CollectionBaseComponent implements OnInit, OnDestroy {
     return this.items.filter(
       (item: CollectionItem) => item.type.toLowerCase() === tab.toLowerCase()
     ).length;
+  }
+
+  openLoginDialog() {
+    const dialog = this.dialog.open(DialogLoginComponent);
   }
 }

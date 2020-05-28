@@ -3,7 +3,7 @@
 @import "~@angular/material/theming";
 // Plus imports for other components in your app's
 
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 $md-bmcblue: (
   50: #e0f6fa,
@@ -76,11 +76,11 @@ $md-bmc-violet: (
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 $custom-typography: mat-typography-config(
-  $font-family: "Roboto"
+  $font-family: "Nunito"
 );
 
 $custom-typography: mat-typography-config(
-  $font-family: "Roboto",
+  $font-family: "Nunito",
   $headline: mat-typography-level(28px, 36px, 700),
   $body-1: mat-typography-level(16px, 22px, 500),
   $title: mat-typography-level(20px, 24px, 500)

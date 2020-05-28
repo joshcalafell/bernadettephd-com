@@ -24,6 +24,7 @@
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "@bit/bit.envs.compilers.typescript": "^3.1.46",
     "file-saver": "^2.0.2",
     "firebase": ">= 5.5.7 <8",
     "lodash": "^4.17.15",
@@ -60,7 +61,7 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": ">=3.6.4 <3.9.0"
   },
   "husky": {
     "hooks": {
@@ -72,6 +73,6 @@
       "compiler": "bit.envs/compilers/angular@9.0.14"
     },
     "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "yarn"
+    "packageManager": "npm"
   }
 }

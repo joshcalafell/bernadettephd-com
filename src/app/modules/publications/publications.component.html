@@ -1,6 +1,6 @@
 <div class="section">
   <h2 class="page-title mat-headline">Publications</h2>
-  <p class="margin-common" *ngIf="!(auth.authState | async)">
+  <p class="warning" *ngIf="!(auth.authState | async)">
     The 50+ publications available here are hosted at no cost to you, however to
     reduce liablity and costs for us, we ask that you have an
     <a
@@ -13,7 +13,6 @@
     >
     to be able to download publications.
   </p>
-
   <mat-spinner color="primary" *ngIf="loading" class="spinner"></mat-spinner>
 
   <mat-tab-group *ngIf="!loading">

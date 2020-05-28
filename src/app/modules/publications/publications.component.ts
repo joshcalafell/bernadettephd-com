@@ -22,6 +22,6 @@ export class PublicationsComponent extends CollectionBaseComponent
   }
 
   openDialog(): void {
-    const dialogRef = super.dialog.open(DialogLoginComponent);
+    super.openLoginDialog();
   }
 }

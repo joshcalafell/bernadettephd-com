@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  font-family: "Assistant", sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
 }
 
 .spacer {
@@ -90,13 +90,20 @@ p.item {
 .section {
   min-height: calc(100vh - 64px);
   h2 {
-    font-family: "Assistant", sans-serif;
     font-weight: 500;
     padding-top: 16px;
     padding-bottom: 16px;
   }
 }
 
+.mat-divider {
+  margin: 16px 16px 0 16px !important;
+}
+
+h1,
+h2 {
+  font-family: "Assistant" !important;
+}
 .list-item {
   margin: 16px 16px;
   padding-top: $padding-common !important;
