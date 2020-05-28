@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogLoginComponent } from '../../components/login/dialog-login/dialog-login.component';
 import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
+import { fadeIn } from 'src/app/animations/fade-in';
 
 @Component({
   selector: 'bmc-publications',
   templateUrl: './publications.component.html',
-  styleUrls: ['./publications.component.scss']
+  styleUrls: ['./publications.component.scss'],
+  animations: [fadeIn]
 })
 export class PublicationsComponent extends CollectionBaseComponent
   implements OnInit {

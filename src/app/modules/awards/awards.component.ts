@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
+import { fadeIn } from 'src/app/animations/fade-in';
 
 @Component({
   selector: 'bmc-awards',
   templateUrl: './awards.component.html',
-  styleUrls: ['./awards.component.scss']
+  styleUrls: ['./awards.component.scss'],
+  animations: [fadeIn]
 })
 export class AwardsComponent extends CollectionBaseComponent implements OnInit {
   // SEO

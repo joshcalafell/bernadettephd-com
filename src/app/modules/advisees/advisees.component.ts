@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CollectionBaseComponent } from 'src/app/components/collection-base/collection.base.component';
+import { fadeIn } from 'src/app/animations/fade-in';
 
 @Component({
   selector: 'bmc-advisees',
   templateUrl: './advisees.component.html',
-  styleUrls: ['./advisees.component.scss']
+  styleUrls: ['./advisees.component.scss'],
+  animations: [fadeIn]
 })
 export class AdviseesComponent extends CollectionBaseComponent
   implements OnInit {

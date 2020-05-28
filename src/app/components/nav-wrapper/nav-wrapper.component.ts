@@ -7,11 +7,13 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ThemeService } from '../../services/theme/theme.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogLoginComponent } from '../login/dialog-login/dialog-login.component';
+import { fadeIn } from 'src/app/animations/fade-in';
 
 @Component({
   selector: 'bmc-nav-wrapper',
   templateUrl: './nav-wrapper.component.html',
-  styleUrls: ['./nav-wrapper.component.scss']
+  styleUrls: ['./nav-wrapper.component.scss'],
+  animations: [fadeIn]
 })
 export class NavWrapperComponent {
   isDarkTheme: Observable<boolean>;

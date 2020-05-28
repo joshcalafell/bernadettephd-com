@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo/seo.service';
+import { fadeIn } from 'src/app/animations/fade-in';
 
 @Component({
   selector: 'bmc-research',
   templateUrl: './research.component.html',
-  styleUrls: ['./research.component.scss']
+  styleUrls: ['./research.component.scss'],
+  animations: [fadeIn]
 })
 export class ResearchComponent implements OnInit {
   panelOpenState = false;
